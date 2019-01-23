@@ -1,8 +1,10 @@
 ---
 title: "qualification-paper"
 author: "Byung-Deuk Woo"
-date: "2019년 1월 23일"
-output: pdf_document
+date: "2019<eb>뀈 1<ec>썡 23<ec>씪"
+output:
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
