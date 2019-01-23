@@ -1,7 +1,7 @@
 ---
-title: "qualification-paper"
+title: "Diffusion of Laws Against Women Related Violence"
 author: "Byung-Deuk Woo"
-date: "2019<eb>뀈 1<ec>썡 23<ec>씪"
+date: ""
 output:
   pdf_document: default
   word_document: default
@@ -11,23 +11,32 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdownkmlmnkljn
-test
+## Research Design
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Diffusion of laws against women crimes in the world.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-```
+# Descriptive statistics for women crimes
+http://www.unwomen.org/en/what-we-do/ending-violence-against-women/facts-and-figures#notes
+Show how severe the crimes are.
 
-## Including Plots
+Cumulative graph of the number of countries having laws against women crimes.
+Survival Functions 
 
-You can also embed plots, for example:
+# Theory: When and Why Do Countries Adopt Laws Against Women Crimes?
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Variables & Data
+Independent Variables
+Dependent Variables
+Control Variables
+
+# Method
+
+
+# Result
+
+
+# Conclusion
+
+
