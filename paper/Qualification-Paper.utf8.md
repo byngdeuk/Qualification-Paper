@@ -7,9 +7,7 @@ output:
   word_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ### Research Design
 
@@ -47,11 +45,10 @@ The sources of information of UN women global database on violence against women
 # Explanatory Variables
 Domestic Explanatory Variables
 GDP per capita
-Urbanization (CNTS)
+Urbanization
 Regime Type (Level of Democracy)
-
-Colonial Heritage: ht_colonial (QOG)
-Religion: (QOG)
+Colonial Heritage
+Religion
 Geo-Political Region
 IO Membership
 Domestic Violence
