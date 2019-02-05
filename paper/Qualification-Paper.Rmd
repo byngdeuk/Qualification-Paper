@@ -3,13 +3,17 @@ title: "Diffusion of Laws Against Women Related Violence"
 author: "Byung-Deuk Woo"
 date: ""
 output:
-  pdf_document: default
   word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+### 1. Introduction
+
+
 
 ### Research Design
 
