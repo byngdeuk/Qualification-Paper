@@ -7,17 +7,15 @@ output:
   word_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ### 1. Introduction
-Nowadays, there are many problems related to violence against women including sexual harassment and sexual violence. The absence of laws for discerning whether certain behavior is crime or not exacerbates those problems. (Add examples) Laws are the very basic tools to regulate crimes against women. Crimes against women is not only problem in Developing countires, but also Developed countries. Why and when do countries adopt laws against crimes against women. However, adopting laws should not be an end-stage. It is a startline for regulating crimes against women. The more important thing is implementing laws practically. (UN data explanation + diffusion with steps explanation) 
+
 
 
 ### Research Design
 
-Diffusion of laws and National Action Plan against women crimes in the world.
+Diffusion of laws against women crimes in the world.
 
 
 ## Descriptive statistics for women crimes
@@ -33,9 +31,7 @@ Show how severe the crimes are.
 Figure: Proliferation of Laws against Women Crimes (by sort of crimes)
 Figure: Cumulative graph of the number of countries having laws against women crimes.
 Figure: Survival Functions 
-
-Map: Countries with Laws against Women Crimes (by sort of crimes) 
-(Weidmann, Nils B., Doreen Kuse, and Kristian Skrede Gleditsch. "The Geography of the International System: The CShapes Dataset." International Interactions 36, no. 1 (2010).)
+Map: Countries with Laws against Women Crimes (by sort of crimes)
 
 ## Variables
 
@@ -52,28 +48,19 @@ The sources of information of UN women global database on violence against women
 
 # Explanatory Variables
 Domestic Explanatory Variables
-
-Total summed magnitudes of all societal and interstate major episodes of political violence (MEPV)
-Domestic political unstability can affect negatively the effort to adopt laws against crimes against women and National Action Plan. 
-
-Level of democracy from polity2
-
-Women political empowerment
-
 GDP per capita
+Urbanization (CNTS)
+Regime Type (Level of Democracy)
 
+Colonial Heritage: ht_colonial (QOG)
+Religion: (QOG)
+Geo-Political Region
+IO Membership
+Domestic Violence
+Women legislators
 
 # Diffusion Variables
-
-Colonial heritage
-
-Religion
-
-Geo-Political region
-
-Legal origin
-
-CEDAW
+Geographical contiguity
 
 
 # Control Variables
