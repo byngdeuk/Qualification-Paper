@@ -146,6 +146,7 @@ replication4 <- replication4 %>%
 
 
 # draw maps for countries having laws and NAP #
+library("ggplot2")
 install.packages("cshapes")
 library("cshapes")
 cshp(date=NA, useGW=FALSE)
@@ -188,8 +189,8 @@ df1996 <- data.frame(id,ccode)
 my1996M <- merge(my1996, df1996, by.my1996 = "id", by.df1996 = "id")
 d1996 <- subset(replication4, year == 1996)
 my1996M2 <- merge(my1996M, d1996, by.my1996M = "ccode", by.d1996 = "ccode")
-ggplot(my1996M2, aes(x=long, y=lat, group=group)) + geom_path() + geom_polygon(aes(fill = L_has_any), colour = rgb(1,1,1,0.2)) + scale_fill_gradient("Blue", "Red") + ggtitle("Countries with Laws against Crimes agianst Women in 1996")
-
+p <- ggplot(my1996M2, aes(x=long, y=lat, group=group)) + geom_path() + geom_polygon(aes(fill = L_has_any), colour = rgb(1,1,1,0.2)) + scale_fill_gradient("Blue", "Red") + ggtitle("Countries with Laws against Crimes agianst Women in 1996")
+print(p)
 
 cshp.2006 <- cshp(date=as.Date("2006-6-30"), useGW=FALSE)
 my2006 <- fortify(cshp.2006)
@@ -216,11 +217,35 @@ write.dta(replication4, file = "replication4.dta")
 
 # Count number of countries with laws or NAP by year for cumulative graph #
 library(dplyr)
-replication4 %>%
+cum <- replication4 %>%
   filter(L_has_any>0) %>%
   group_by(year) %>%
   tally()
-# I have to know how to convert the outcomes into new dataframe and make cumulative graph by year#
+
+# Cumulative line graphs of Number of Countries with Laws against Crimes against Women #
+cumulative <- ggplot() +
+  geom_line(aes(y = n, x = year), size=1, data = cum,
+            ) +
+  theme(legend.position="bottom", legend.direction="horizontal",
+        legend.title = element_blank()) +
+  scale_x_continuous(breaks=seq(1908,2016,8)) +
+  labs(x="Year", y="Number of Countries") +
+  ggtitle("Cumulative Number of Countries with Laws against Crimes against Women") +
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(),
+        panel.border = element_blank(), panel.background = element_blank()) +
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10),
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white"))
+cumulative
+
+install.packages("plotly") 
+library(plotly)
+
+cumulative <- ggplotly(cumulative)
+cumulative 
 
 # Analysis #
 library(survival)
