@@ -56,6 +56,13 @@ replication4 <- replication4 %>%
   group_by(ccode) %>%
   mutate(lag.actotal = dplyr::lag(actotal, n=1, default = NA)) 
 
+#replace na of laggded to 0#
+replication4$lag.L_has_any[which(is.na(replication4$lag.L_has_any))] <- 0
+replication4$lag.NAP_has_any[which(is.na(replication4$lag.NAP_has_any))] <- 0
+replication4$lag.L_has_num[which(is.na(replication4$lag.L_has_num))] <- 0
+replication4$lag.NAP_has_num[which(is.na(replication4$lag.NAP_has_num))] <- 0
+
+
 # replace NA of ht_region and ht_colonial with first observed value by ccode  because region and colonial heritage didn't change over time #
 replication4 <- replication4 %>%
   group_by(ccode) %>%
@@ -250,5 +257,49 @@ cumulative
 # Analysis #
 library(survival)
 library(MASS)
-fit2 = coxph(Surv(time,L_any)~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.polity2 + lag.cgdppc + lag.vdem_gender + cluster(ccode), data=replication4)
+fit2 = coxph(Surv(time,L_has_any)~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.polity2 + lag.cgdppc + lag.vdem_gender + cluster(ccode), data=replication4)
 summary(fit2)
+
+# drop before first any law adoption#
+replication <- subset(replication4, year > 1907)
+
+#subset lag.L_has_any<1: drop after first adoption#
+subset1 <- subset(replication, lag.L_has_any<1)
+
+##Any law##
+#first adoption#
+myprobit <- glm(L_has_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + time + time_sq + cluster(ccode), data=subset1)
+summary(myprobit)
+
+#repeated adoption#
+myprobit2 <- glm(L_has_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + time + time_sq + cluster(ccode), data=replication)
+summary(myprobit2)
+
+##Diffusion of NAP without considering steps##
+#subset lag.NAP_has_any<1: drop after first NAP#
+replicationNAP <- subset(replication4, year > 1991)
+replicationNAP <- replicationNAP %>%
+  mutate(time = year - 1992)
+replicationNAP <- replicationNAP %>%
+  mutate(time_sq = time * time)
+
+subset1NAP <- subset(replicationNAP, lag.NAP_has_any<1)
+
+#first NAP#
+myprobitNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + time + time_sq + cluster(ccode), data=subset1NAP)
+summary(myprobitNAP)
+
+#repeated NAP#
+myprobit2NAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + time + time_sq + cluster(ccode), data=replicationNAP)
+summary(myprobit2NAP)
+
+
+##Diffusion of NAP after Adoption of Law##
+#repeated NAP after adoption of law#
+subsetLNAP <- subset(replicationNAP, L_has_any>0)
+myprobitLNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + time + time_sq + cluster(ccode), data=subsetLNAP)
+summary(myprobitLNAP)
+#first NAP after adoption of law#
+subset1LNAP <- subset(subsetLNAP, lag.NAP_has_any<1)
+myprobit1LNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + time + time_sq + cluster(ccode), data=subset1LNAP)
+summary(myprobit1LNAP)
