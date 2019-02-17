@@ -266,11 +266,16 @@ replication <- subset(replication4, year > 1907)
 #subset lag.L_has_any<1: drop after first adoption#
 subset1 <- subset(replication, lag.L_has_any<1)
 
+# test cluster#
+install.packages("clusterSEs")
+library(clusterSEs)
+
 ##Any law##
 #first adoption#
 myprobit <- glm(L_has_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1)
 summary(myprobit)
 nobs(myprobit)
+clust.myprobit <- cluster.bs.glm(myprobit, subset1, ~ ccode, report = T)
 
 mycox <- coxph(Surv(time,L_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=subset1)
 summary(mycox)
@@ -279,6 +284,8 @@ summary(mycox)
 myprobit2 <- glm(L_has_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=replication)
 summary(myprobit2)
 nobs(myprobit2)
+clust.myprobit2 <- cluster.bs.glm(myprobit2, replication, ~ ccode, report = T)
+
 
 mycox2 <- coxph(Surv(time,L_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=replication)
 summary(mycox2)
