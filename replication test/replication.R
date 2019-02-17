@@ -337,5 +337,8 @@ clust.myprobitLNAP <- cluster.bs.glm(myprobitLNAP, subsetLNAP, ~ ccode, report =
 subset1LNAP <- subset(subsetLNAP, lag.NAP_has_any<1)
 myprobit1LNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1LNAP)
 summary(myprobit1LNAP)
+
 nobs(myprobit1LNAP)
 clust.myprobit1LNAP <- cluster.bs.glm(myprobit1LNAP, subset1LNAP, ~ ccode, report = T)
+
+
