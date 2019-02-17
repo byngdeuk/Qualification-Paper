@@ -304,6 +304,8 @@ subset1NAP <- subset(replicationNAP, lag.NAP_has_any<1)
 myprobitNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1NAP)
 summary(myprobitNAP)
 nobs(myprobitNAP)
+clust.myprobitNAP <- cluster.bs.glm(myprobitNAP, subset1NAP, ~ ccode, report = T)
+
 
 mycoxNAP <- coxph(Surv(time,NAP_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=subset1NAP)
 summary(mycoxNAP)
@@ -315,6 +317,8 @@ write.dta(replicationNAP, file = "subset1NAP.dta")
 myprobit2NAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=replicationNAP)
 summary(myprobit2NAP)
 nobs(myprobit2NAP)
+clust.myprobit2NAP <- cluster.bs.glm(myprobit2NAP, replicationNAP, ~ ccode, report = T)
+
 
 mycox2NAP <- coxph(Surv(time,NAP_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender, data=replicationNAP)
 summary(mycox2NAP)
@@ -326,9 +330,12 @@ subsetLNAP <- subset(replicationNAP, L_has_any>0)
 myprobitLNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subsetLNAP)
 summary(myprobitLNAP)
 nobs(myprobitLNAP)
+clust.myprobitLNAP <- cluster.bs.glm(myprobitLNAP, subsetLNAP, ~ ccode, report = T)
+
 
 #first NAP after adoption of law#
 subset1LNAP <- subset(subsetLNAP, lag.NAP_has_any<1)
 myprobit1LNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1LNAP)
 summary(myprobit1LNAP)
 nobs(myprobit1LNAP)
+clust.myprobit1LNAP <- cluster.bs.glm(myprobit1LNAP, subset1LNAP, ~ ccode, report = T)
