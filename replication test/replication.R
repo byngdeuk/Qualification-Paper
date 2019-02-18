@@ -263,6 +263,21 @@ summary(fit2)
 # drop before first any law adoption#
 replication <- subset(replication4, year > 1907)
 
+#Labeling# 
+replication$ht_region <- factor(replication$ht_region, 
+                                levels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+                                labels = c("Eastern Europe", "Latin America", "North Africa&Middle East", "Sub-Saharan Africa", "Western Europe&North America", "East Asia", "South-East Asia", "South Asia", "The Pacific", "The Caribbean"))
+
+# visualization #
+by_year_region <- replication %>%
+  group_by(year, ht_region) %>%
+  summarise(NumofCon = sum(L_has_any))
+
+ggplot(by_year_region, aes(x=year, y=NumofCon, color=ht_region)) +
+  geom_path() +
+  facet_wrap(~ ht_region)
+
+
 #subset lag.L_has_any<1: drop after first adoption#
 subset1 <- subset(replication, lag.L_has_any<1)
 
