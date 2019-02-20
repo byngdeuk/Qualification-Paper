@@ -268,6 +268,9 @@ replication$ht_region <- factor(replication$ht_region,
                                 levels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                                 labels = c("Eastern Europe and post Soviet Union", "Latin America", "North Africa & the Middle East", "Sub-Saharan Africa", "Western Europe & North America", "East Asia", "South-East Asia", "South Asia", "The Pacific", "The Caribbean"))
 
+#Descriptive Table for Variables#
+summary(replication)
+
 # visualization #
 by_year_region <- replication %>%
   group_by(year, ht_region) %>%
