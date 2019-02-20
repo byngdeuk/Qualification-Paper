@@ -237,7 +237,7 @@ cumulative <- ggplot() +
         legend.title = element_blank()) +
   scale_x_continuous(breaks=seq(1908,2016,8)) +
   labs(x="Year", y="Number of Countries") +
-  ggtitle("Cumulative Number of Countries with Laws against Crimes against Women") +
+  ggtitle("Cumulative Number of Countries with Laws against Violance Against Women") +
   theme(axis.line = element_line(size=1, colour = "black"),
         panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(),
         panel.border = element_blank(), panel.background = element_blank()) +
@@ -253,6 +253,8 @@ library(plotly)
 
 cumulative <- ggplotly(cumulative)
 cumulative 
+savePlot(CumulativeNumber)
+ggsave(filename = "Cumulative Number of Countries with Laws against Violence Against Women", plot = plot.default())
 
 # Analysis #
 library(survival)
