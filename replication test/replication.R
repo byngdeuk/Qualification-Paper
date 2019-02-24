@@ -229,6 +229,11 @@ cum <- replication4 %>%
   group_by(year) %>%
   tally()
 
+cumNAP <- replication4 %>%
+  filter(NAP_has_any>0) %>%
+  group_by(year) %>%
+  tally()
+
 # Cumulative line graphs of Number of Countries with Laws against Crimes against Women #
 cumulative <- ggplot() +
   geom_line(aes(y = n, x = year), size=1, data = cum,
@@ -247,6 +252,25 @@ cumulative <- ggplot() +
         axis.text.y=element_text(colour="black", size = 10),
         legend.key=element_rect(fill="white", colour="white"))
 cumulative
+
+cumulativeNAP <- ggplot() +
+  geom_line(aes(y = n, x = year), size=1, data = cumNAP,
+  ) +
+  theme(legend.position="bottom", legend.direction="horizontal",
+        legend.title = element_blank()) +
+  scale_x_continuous(breaks=seq(1988,2016,8)) +
+  labs(x="Year", y="Number of Countries") +
+  ggtitle("Cumulative Number of Countries with NAP against Violance Against Women") +
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(),
+        panel.border = element_blank(), panel.background = element_blank()) +
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10),
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white"))
+cumulativeNAP
+
 
 install.packages("plotly") 
 library(plotly)
@@ -292,23 +316,28 @@ library(clusterSEs)
 
 ##Any law##
 #first adoption#
-myprobit <- glm(L_has_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1)
+myprobit <- glm(L_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1)
 summary(myprobit)
 nobs(myprobit)
 clust.myprobit <- cluster.bs.glm(myprobit, subset1, ~ ccode, report = T)
 
-mycox <- coxph(Surv(time,L_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=subset1)
+mycox <- coxph(Surv(time,L_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=subset1)
 summary(mycox)
 
 #repeated adoption#
-myprobit2 <- glm(L_has_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=replication)
+myprobit2 <- glm(L_any ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=replication)
 summary(myprobit2)
 nobs(myprobit2)
 clust.myprobit2 <- cluster.bs.glm(myprobit2, replication, ~ ccode, report = T)
 
-
-mycox2 <- coxph(Surv(time,L_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=replication)
+# I cannot use proportional hazard model because it does not pass the diagnostic test of proportional hazard #
+mycox2 <- coxph(Surv(time,L_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=replication)
 summary(mycox2)
+test.ph <- cox.zph(mycox2)
+test.ph
+
+#simple hazard model#
+
 
 ##Diffusion of NAP without considering steps##
 #subset lag.NAP_has_any<1: drop after first NAP#
@@ -321,33 +350,33 @@ replicationNAP <- replicationNAP %>%
 subset1NAP <- subset(replicationNAP, lag.NAP_has_any<1)
 
 #first NAP#
-myprobitNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1NAP)
+myprobitNAP <- glm(NAP_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1NAP)
 summary(myprobitNAP)
 nobs(myprobitNAP)
 clust.myprobitNAP <- cluster.bs.glm(myprobitNAP, subset1NAP, ~ ccode, report = T)
 
 
-mycoxNAP <- coxph(Surv(time,NAP_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=subset1NAP)
+mycoxNAP <- coxph(Surv(time,NAP_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + cluster(ccode), data=subset1NAP)
 summary(mycoxNAP)
 
 write.dta(replicationNAP, file = "subset1NAP.dta")
 
 
 #repeated NAP#
-myprobit2NAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=replicationNAP)
+myprobit2NAP <- glm(NAP_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=replicationNAP)
 summary(myprobit2NAP)
 nobs(myprobit2NAP)
 clust.myprobit2NAP <- cluster.bs.glm(myprobit2NAP, replicationNAP, ~ ccode, report = T)
 
 
-mycox2NAP <- coxph(Surv(time,NAP_has_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender, data=replicationNAP)
+mycox2NAP <- coxph(Surv(time,NAP_any) ~ CEDAW + DL_ht_colonial + DL_ht_region + DL_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender, data=replicationNAP)
 summary(mycox2NAP)
 
 
 ##Diffusion of NAP after Adoption of Law##
 #repeated NAP after adoption of law#
 subsetLNAP <- subset(replicationNAP, L_has_any>0)
-myprobitLNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subsetLNAP)
+myprobitLNAP <- glm(NAP_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subsetLNAP)
 summary(myprobitLNAP)
 nobs(myprobitLNAP)
 clust.myprobitLNAP <- cluster.bs.glm(myprobitLNAP, subsetLNAP, ~ ccode, report = T)
@@ -355,7 +384,7 @@ clust.myprobitLNAP <- cluster.bs.glm(myprobitLNAP, subsetLNAP, ~ ccode, report =
 
 #first NAP after adoption of law#
 subset1LNAP <- subset(subsetLNAP, lag.NAP_has_any<1)
-myprobit1LNAP <- glm(NAP_has_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1LNAP)
+myprobit1LNAP <- glm(NAP_any ~ CEDAW + DNAP_ht_colonial + DNAP_ht_region + DNAP_lp_legor + lag.cgdppc + lag.polity2 + lag.vdem_gender + lag.actotal + time + time_sq,family=binomial(link="probit"), data=subset1LNAP)
 summary(myprobit1LNAP)
 
 nobs(myprobit1LNAP)
