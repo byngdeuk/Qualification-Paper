@@ -271,6 +271,51 @@ cumulativeNAP <- ggplot() +
         legend.key=element_rect(fill="white", colour="white"))
 cumulativeNAP
 
+# Number of adoption of laws and NAP by year #
+cumyear <- replication4 %>%
+  group_by(year) %>%
+  filter(year>1907) %>%
+  summarise(numinyear = sum(L_any))
+
+cumyearLAW <- ggplot(cumyear, aes(x = year, y = numinyear)) +
+  geom_col() +
+  theme(legend.position="bottom", legend.direction="horizontal",
+        legend.title = element_blank()) +
+  scale_x_continuous(breaks=seq(1908,2016,8)) +
+  labs(x="Year", y="Number of Countries") +
+  ggtitle("Number of Countries Adopting Laws against Violence Against Women by Year") +
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(),
+        panel.border = element_blank(), panel.background = element_blank()) +
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10),
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white"))
+cumyearLAW
+
+cumyear2 <- replication4 %>%
+  group_by(year) %>%
+  filter(year>1987) %>%
+  summarise(numinyear = sum(NAP_any))
+
+cumyearNAP <- ggplot(cumyear2, aes(x = year, y = numinyear)) +
+  geom_col() +
+  theme(legend.position="bottom", legend.direction="horizontal",
+        legend.title = element_blank()) +
+  scale_x_continuous(breaks=seq(1908,2016,8)) +
+  labs(x="Year", y="Number of Countries") +
+  ggtitle("Number of Countries Adopting NAP against Violence Against Women by Year") +
+  theme(axis.line = element_line(size=1, colour = "black"),
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(),
+        panel.border = element_blank(), panel.background = element_blank()) +
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10),
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white"))
+cumyearNAP
+
 
 install.packages("plotly") 
 library(plotly)
