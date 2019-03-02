@@ -435,4 +435,6 @@ summary(myprobit1LNAP)
 nobs(myprobit1LNAP)
 clust.myprobit1LNAP <- cluster.bs.glm(myprobit1LNAP, subset1LNAP, ~ ccode, report = T)
 
+# getting out replication for running stata #
+write.dta(replication, file = "replication.dta")
 
