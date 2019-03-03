@@ -475,7 +475,8 @@ replication <- replication %>%
   mutate(lag.NAP_new = dplyr::lag(NAP_new, n=1, default = NA)) %>%
   mutate(lag.NAP_sexual_harassment = dplyr::lag(NAP_sexual_harassment, n=1, default = NA)) %>%
   mutate(lag.NAP_FGM = dplyr::lag(NAP_FGM, n=1, default = NA)) %>%
-  mutate(lag.NAPL_trafficking = dplyr::lag(NAPL_trafficking, n=1, default = NA))
+  mutate(lag.NAPL_trafficking = dplyr::lag(NAPL_trafficking, n=1, default = NA)) %>%
+  mutate(lag.NAPL_child_ealry_forced = dplyr::lag(NAPL_child_ealry_forced, n=1, default = NA))
 
 #replace na of laggded to 0#
 replication$lag.L_Feminicide[which(is.na(replication$lag.L_Feminicide))] <- 0
@@ -501,6 +502,59 @@ replication$lag.NAP_new[which(is.na(replication$lag.NAP_new))] <- 0
 replication$lag.NAP_sexual_harassment[which(is.na(replication$lag.NAP_sexual_harassment))] <- 0
 replication$lag.NAP_FGM[which(is.na(replication$lag.NAP_FGM))] <- 0
 replication$lag.NAPL_trafficking[which(is.na(replication$lag.NAPL_trafficking))] <- 0
+replication$lag.NAPL_child_ealry_forced[which(is.na(replication$lag.NAPL_child_ealry_forced))] <- 0
+
+# change 2, 3 to 1 for adoption #
+replication1 <- replication %>%
+  mutate(L_Femicide = ifelse(L_Femicide > 0, 1, 0)) %>%
+  mutate(L_forced_sterilization = ifelse(L_forced_sterilization > 0, 1, 0)) %>%
+  mutate(L_stalking = ifelse(L_stalking > 0, 1, 0)) %>%
+  mutate(L_property = ifelse(L_property > 0, 1, 0)) %>%
+  mutate(L_violence_against_women = ifelse(L_violence_against_women > 0, 1, 0)) %>%
+  mutate(L_domestic = ifelse(L_domestic > 0, 1, 0)) %>%
+  mutate(L_sexual_violence = ifelse(L_sexual_violence > 0, 1, 0)) %>%
+  mutate(L_new = ifelse(L_new > 0, 1, 0)) %>%
+  mutate(L_sexual_harassment = ifelse(L_sexual_harassment > 0, 1, 0)) %>%
+  mutate(L_FGM = ifelse(L_FGM > 0, 1, 0)) %>%
+  mutate(L_trafficking = ifelse(L_trafficking > 0, 1, 0)) %>%
+  mutate(L_child_ealry_forced = ifelse(L_child_ealry_forced > 0, 1, 0)) %>%
+  mutate(NAP_Femicide = ifelse(NAP_Femicide > 0, 1, 0)) %>%
+  mutate(NAP_forced_sterilization = ifelse(NAP_forced_sterilization > 0, 1, 0)) %>%
+  mutate(NAP_stalking = ifelse(NAP_stalking > 0, 1, 0)) %>%
+  mutate(NAP_property = ifelse(NAP_property > 0, 1, 0)) %>%
+  mutate(NAP_violence_against_women = ifelse(NAP_violence_against_women > 0, 1, 0)) %>%
+  mutate(NAP_domestic = ifelse(NAP_domestic > 0, 1, 0)) %>%
+  mutate(NAP_sexual_violence = ifelse(NAP_sexual_violence > 0, 1, 0)) %>%
+  mutate(NAP_new = ifelse(NAP_new > 0, 1, 0)) %>%
+  mutate(NAP_sexual_harassment = ifelse(NAP_sexual_harassment > 0, 1, 0)) %>%
+  mutate(NAP_FGM = ifelse(NAP_FGM > 0, 1, 0)) %>%
+  mutate(NAPL_trafficking = ifelse(NAPL_trafficking > 0, 1, 0)) %>%
+  mutate(NAPL_child_ealry_forced = ifelse(NAPL_child_ealry_forced > 0, 1, 0)) %>%
+  mutate(lag.L_Feminicide = ifelse(lag.L_Feminicide > 0, 1, 0)) %>%
+  mutate(lag.L_forced_sterilization = ifelse(lag.L_forced_sterilization > 0, 1, 0)) %>%
+  mutate(lag.L_stalking = ifelse(lag.L_stalking > 0, 1, 0)) %>%
+  mutate(lag.L_property = ifelse(lag.L_property > 0, 1, 0)) %>%
+  mutate(lag.L_violence_against_women = ifelse(lag.L_violence_against_women > 0, 1, 0)) %>%
+  mutate(lag.L_domestic = ifelse(lag.L_domestic > 0, 1, 0)) %>%
+  mutate(lag.L_sexual_violence = ifelse(lag.L_sexual_violence > 0, 1, 0)) %>%
+  mutate(lag.L_new = ifelse(lag.L_new > 0, 1, 0)) %>%
+  mutate(lag.L_sexual_harassment = ifelse(lag.L_sexual_harassment > 0, 1, 0)) %>%
+  mutate(lag.L_FGM = ifelse(lag.L_FGM > 0, 1, 0)) %>%
+  mutate(lag.L_trafficking = ifelse(lag.L_trafficking > 0, 1, 0)) %>%
+  mutate(lag.L_child_ealry_forced = ifelse(lag.L_child_ealry_forced > 0, 1, 0)) %>%
+  mutate(lag.NAP_Femicide = ifelse(lag.NAP_Femicide > 0, 1, 0)) %>%
+  mutate(lag.NAP_forced_sterilization = ifelse(lag.NAP_forced_sterilization > 0, 1, 0)) %>%
+  mutate(lag.NAP_stalking = ifelse(lag.NAP_stalking > 0, 1, 0)) %>%
+  mutate(lag.NAP_property = ifelse(lag.NAP_property > 0, 1, 0)) %>%
+  mutate(lag.NAP_violence_against_women = ifelse(lag.NAP_violence_against_women > 0, 1, 0)) %>%
+  mutate(lag.NAP_domestic = ifelse(lag.NAP_domestic > 0, 1, 0)) %>%
+  mutate(lag.NAP_sexual_violence = ifelse(lag.NAP_sexual_violence > 0, 1, 0)) %>%
+  mutate(lag.NAP_new = ifelse(lag.NAP_new > 0, 1, 0)) %>%
+  mutate(lag.NAP_sexual_harassment = ifelse(lag.NAP_sexual_harassment > 0, 1, 0)) %>%
+  mutate(lag.NAP_FGM = ifelse(lag.NAP_FGM > 0, 1, 0)) %>%
+  mutate(lag.NAPL_trafficking = ifelse(lag.NAPL_trafficking > 0, 1, 0)) %>%
+  mutate(lag.NAPL_child_ealry_forced = ifelse(lag.NAPL_child_ealry_forced > 0, 1, 0))
+  
 
 # getting out replication for running stata #
-write.dta(replication, file = "replication.dta")
+write.dta(replication, file = "replication1.dta")
