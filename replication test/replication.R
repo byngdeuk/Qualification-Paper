@@ -438,3 +438,69 @@ clust.myprobit1LNAP <- cluster.bs.glm(myprobit1LNAP, subset1LNAP, ~ ccode, repor
 # getting out replication for running stata #
 write.dta(replication, file = "replication.dta")
 
+# create Number and Percentage of CEDAW countries #
+replication <- replication %>%
+  group_by(year) %>%
+  mutate(count_country = n())
+
+replication <- replication %>%
+  group_by(year) %>%
+  mutate(count_country_CEDAW = sum(CEDAW))
+
+replication <- replication %>%
+  mutate(percentage_CEDAW = as.numeric(count_country_CEDAW)/as.numeric(count_country))
+
+# create lagged adoptions by country for multiple components analysis #
+replication <- replication %>%
+  group_by(ccode) %>%
+  mutate(lag.L_Feminicide = dplyr::lag(L_Femicide, n=1, default = NA)) %>%
+  mutate(lag.L_forced_sterilization = dplyr::lag(L_forced_sterilization, n=1, default = NA)) %>%
+  mutate(lag.L_stalking = dplyr::lag(L_stalking, n=1, default = NA)) %>%
+  mutate(lag.L_property = dplyr::lag(L_property, n=1, default = NA)) %>%
+  mutate(lag.L_violence_against_women = dplyr::lag(L_violence_against_women, n=1, default = NA)) %>%
+  mutate(lag.L_domestic = dplyr::lag(L_domestic, n=1, default = NA)) %>%
+  mutate(lag.L_sexual_violence = dplyr::lag(L_sexual_violence, n=1, default = NA)) %>%
+  mutate(lag.L_new = dplyr::lag(L_new, n=1, default = NA)) %>%
+  mutate(lag.L_sexual_harassment = dplyr::lag(L_sexual_harassment, n=1, default = NA)) %>%
+  mutate(lag.L_FGM = dplyr::lag(L_FGM, n=1, default = NA)) %>%
+  mutate(lag.L_trafficking = dplyr::lag(L_trafficking, n=1, default = NA)) %>%
+  mutate(lag.L_child_ealry_forced = dplyr::lag(L_child_ealry_forced, n=1, default = NA)) %>%
+  mutate(lag.NAP_Femicide = dplyr::lag(NAP_Femicide, n=1, default = NA)) %>%
+  mutate(lag.NAP_forced_sterilization = dplyr::lag(NAP_forced_sterilization, n=1, default = NA)) %>%
+  mutate(lag.NAP_stalking = dplyr::lag(NAP_stalking, n=1, default = NA)) %>%
+  mutate(lag.NAP_property = dplyr::lag(NAP_property, n=1, default = NA)) %>%
+  mutate(lag.NAP_violence_against_women = dplyr::lag(NAP_violence_against_women, n=1, default = NA)) %>%
+  mutate(lag.NAP_domestic = dplyr::lag(NAP_domestic, n=1, default = NA)) %>%
+  mutate(lag.NAP_sexual_violence = dplyr::lag(NAP_sexual_violence, n=1, default = NA)) %>%
+  mutate(lag.NAP_new = dplyr::lag(NAP_new, n=1, default = NA)) %>%
+  mutate(lag.NAP_sexual_harassment = dplyr::lag(NAP_sexual_harassment, n=1, default = NA)) %>%
+  mutate(lag.NAP_FGM = dplyr::lag(NAP_FGM, n=1, default = NA)) %>%
+  mutate(lag.NAPL_trafficking = dplyr::lag(NAPL_trafficking, n=1, default = NA))
+
+#replace na of laggded to 0#
+replication$lag.L_Feminicide[which(is.na(replication$lag.L_Feminicide))] <- 0
+replication$lag.L_forced_sterilization[which(is.na(replication$lag.L_forced_sterilization))] <- 0
+replication$lag.L_stalking[which(is.na(replication$lag.L_stalking))] <- 0
+replication$lag.L_property[which(is.na(replication$lag.L_property))] <- 0
+replication$lag.L_violence_against_women[which(is.na(replication$lag.L_violence_against_women))] <- 0
+replication$lag.L_domestic[which(is.na(replication$lag.L_domestic))] <- 0
+replication$lag.L_sexual_violence[which(is.na(replication$lag.L_sexual_violence))] <- 0
+replication$lag.L_new[which(is.na(replication$lag.L_new))] <- 0
+replication$lag.L_sexual_harassment[which(is.na(replication$lag.L_sexual_harassment))] <- 0
+replication$lag.L_FGM[which(is.na(replication$lag.L_FGM))] <- 0
+replication$lag.L_trafficking[which(is.na(replication$lag.L_trafficking))] <- 0
+replication$lag.L_child_ealry_forced[which(is.na(replication$lag.L_child_ealry_forced))] <- 0
+replication$lag.NAP_Femicide[which(is.na(replication$lag.NAP_Femicide))] <- 0
+replication$lag.NAP_forced_sterilization[which(is.na(replication$lag.NAP_forced_sterilization))] <- 0
+replication$lag.NAP_stalking[which(is.na(replication$lag.NAP_stalking))] <- 0
+replication$lag.NAP_property[which(is.na(replication$lag.NAP_property))] <- 0
+replication$lag.NAP_violence_against_women[which(is.na(replication$lag.NAP_violence_against_women))] <- 0
+replication$lag.NAP_domestic[which(is.na(replication$lag.NAP_domestic))] <- 0
+replication$lag.NAP_sexual_violence[which(is.na(replication$lag.NAP_sexual_violence))] <- 0
+replication$lag.NAP_new[which(is.na(replication$lag.NAP_new))] <- 0
+replication$lag.NAP_sexual_harassment[which(is.na(replication$lag.NAP_sexual_harassment))] <- 0
+replication$lag.NAP_FGM[which(is.na(replication$lag.NAP_FGM))] <- 0
+replication$lag.NAPL_trafficking[which(is.na(replication$lag.NAPL_trafficking))] <- 0
+
+# getting out replication for running stata #
+write.dta(replication, file = "replication.dta")
