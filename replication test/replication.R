@@ -143,6 +143,131 @@ replication4 <- replication4 %>%
 replication4 <- replication4 %>%
   mutate(DNAP_lp_legor = as.numeric(NAPnumcountries_lp_legor)/as.numeric(count_lp_legor))
 
+# by components diffusion variables.
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_stalking_num = cumsum(L_stalking),
+         L_has_stalking = ifelse(L_stalking_num > 0, 1, 0),
+         lag.L_stalking_any = dplyr::lag(L_has_stalking, n=1, default = NA))
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_vaw_num = cumsum(L_violence_against_women),
+         L_has_vaw = ifelse(L_vaw_num > 0, 1, 0),
+         lag.L_vaw_any = dplyr::lag(L_has_vaw, n=1, default = NA))
+
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_domestic_num = cumsum(L_domestic),
+         L_has_domestic = ifelse(L_domestic_num > 0, 1, 0),
+         lag.L_domestic_any = dplyr::lag(L_has_domestic, n=1, default = NA))
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_sv_num = cumsum(L_sexual_violence),
+         L_has_sv = ifelse(L_sv_num > 0, 1, 0),
+         lag.L_sv_any = dplyr::lag(L_has_sv, n=1, default = NA))
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_sh_num = cumsum(L_sexual_harassment),
+         L_has_sh = ifelse(L_sh_num > 0, 1, 0),
+         lag.L_sh_any = dplyr::lag(L_has_sh, n=1, default = NA))
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_FGM_num = cumsum(L_FGM),
+         L_has_FGM = ifelse(L_FGM_num > 0, 1, 0),
+         lag.L_FGM_any = dplyr::lag(L_has_FGM, n=1, default = NA))
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_trafficking_num = cumsum(L_trafficking),
+         L_has_trafficking = ifelse(L_trafficking_num > 0, 1, 0),
+         lag.L_trafficking_any = dplyr::lag(L_has_trafficking, n=1, default = NA))
+
+replication4 <- replication4 %>%
+  group_by(ccode) %>%
+  mutate(L_CEF_num = cumsum(L_child_ealry_forced),
+         L_has_CEF = ifelse(L_CEF_num > 0, 1, 0),
+         lag.L_CEF_any = dplyr::lag(L_has_CEF, n=1, default = NA))
+
+#replace na of laggded to 0#
+replication4$lag.L_stalking_any[which(is.na(replication4$lag.L_stalking_any))] <- 0
+replication4$lag.L_vaw_any[which(is.na(replication4$lag.L_vaw_any))] <- 0
+replication4$lag.L_domestic_any[which(is.na(replication4$lag.L_domestic_any))] <- 0
+replication4$lag.L_sv_any[which(is.na(replication4$lag.L_sv_any))] <- 0
+replication4$lag.L_sh_any[which(is.na(replication4$lag.L_sh_any))] <- 0
+replication4$lag.L_FGM_any[which(is.na(replication4$lag.L_FGM_any))] <- 0
+replication4$lag.L_trafficking_any[which(is.na(replication4$lag.L_trafficking_any))] <- 0
+replication4$lag.L_CEF_any[which(is.na(replication4$lag.L_CEF_any))] <- 0
+
+# Counting number of countries by components. #
+replication4 <- replication4 %>%
+  group_by(year, ht_region) %>%
+  mutate(Lnumberstalking_ht_region = sum(lag.L_stalking_any),
+         Lnumbervaw_ht_region = sum(lag.L_vaw_any),
+         Lnumberdomestic_ht_region = sum(lag.L_domestic_any),
+         Lnumbersv_ht_region = sum(lag.L_sv_any),
+         Lnumbersh_ht_region = sum(lag.L_sh_any),
+         LnumberFGM_ht_region = sum(lag.L_FGM_any),
+         Lnumbertrafficking_ht_region = sum(lag.L_trafficking_any),
+         LnumberCEF_ht_region = sum(lag.L_CEF_any))
+
+replication4 <- replication4 %>%
+  group_by(year, ht_colonial) %>%
+  mutate(Lnumberstalking_ht_colonial = sum(lag.L_stalking_any),
+         Lnumbervaw_ht_colonial = sum(lag.L_vaw_any),
+         Lnumberdomestic_ht_colonial = sum(lag.L_domestic_any),
+         Lnumbersv_ht_colonial = sum(lag.L_sv_any),
+         Lnumbersh_ht_colonial = sum(lag.L_sh_any),
+         LnumberFGM_ht_colonial = sum(lag.L_FGM_any),
+         Lnumbertrafficking_ht_colonial = sum(lag.L_trafficking_any),
+         LnumberCEF_ht_colonial = sum(lag.L_CEF_any))
+
+replication4 <- replication4 %>%
+  group_by(year, lp_legor) %>%
+  mutate(Lnumberstalking_lp_legor = sum(lag.L_stalking_any),
+         Lnumbervaw_lp_legor = sum(lag.L_vaw_any),
+         Lnumberdomestic_lp_legor = sum(lag.L_domestic_any),
+         Lnumbersv_lp_legor = sum(lag.L_sv_any),
+         Lnumbersh_lp_legor = sum(lag.L_sh_any),
+         LnumberFGM_lp_legor = sum(lag.L_FGM_any),
+         Lnumbertrafficking_lp_legor = sum(lag.L_trafficking_any),
+         LnumberCEF_lp_legor = sum(lag.L_CEF_any))
+
+replication4 <- replication4 %>%
+  mutate(stalking_ht_region = as.numeric(Lnumberstalking_ht_region)/as.numeric(count_ht_region),
+         vaw_ht_region = as.numeric(Lnumbervaw_ht_region)/as.numeric(count_ht_region),
+         domestic_ht_region = as.numeric(Lnumberdomestic_ht_region)/as.numeric(count_ht_region),
+         sv_ht_region = as.numeric(Lnumbersv_ht_region)/as.numeric(count_ht_region),
+         sh_ht_region = as.numeric(Lnumbersh_ht_region)/as.numeric(count_ht_region),
+         FGM_ht_region = as.numeric(LnumberFGM_ht_region)/as.numeric(count_ht_region),
+         trafficking_ht_region = as.numeric(Lnumbertrafficking_ht_region)/as.numeric(count_ht_region),
+         CEF_ht_region = as.numeric(LnumberCEF_ht_region)/as.numeric(count_ht_region))
+
+replication4 <- replication4 %>%
+  mutate(stalking_ht_colonial = as.numeric(Lnumberstalking_ht_colonial)/as.numeric(count_ht_colonial),
+         vaw_ht_colonial = as.numeric(Lnumbervaw_ht_colonial)/as.numeric(count_ht_colonial),
+         domestic_ht_colonial = as.numeric(Lnumberdomestic_ht_colonial)/as.numeric(count_ht_colonial),
+         sv_ht_colonial = as.numeric(Lnumbersv_ht_colonial)/as.numeric(count_ht_colonial),
+         sh_ht_colonial = as.numeric(Lnumbersh_ht_colonial)/as.numeric(count_ht_colonial),
+         FGM_ht_colonial = as.numeric(LnumberFGM_ht_colonial)/as.numeric(count_ht_colonial),
+         trafficking_ht_colonial = as.numeric(Lnumbertrafficking_ht_colonial)/as.numeric(count_ht_colonial),
+         CEF_ht_colonial = as.numeric(LnumberCEF_ht_colonial)/as.numeric(count_ht_colonial))
+
+replication4 <- replication4 %>%
+  mutate(stalking_lp_legor = as.numeric(Lnumberstalking_lp_legor)/as.numeric(count_lp_legor),
+         vaw_lp_legor = as.numeric(Lnumbervaw_lp_legor)/as.numeric(count_lp_legor),
+         domestic_lp_legor = as.numeric(Lnumberdomestic_lp_legor)/as.numeric(count_lp_legor),
+         sv_lp_legor = as.numeric(Lnumbersv_lp_legor)/as.numeric(count_lp_legor),
+         sh_lp_legor = as.numeric(Lnumbersh_lp_legor)/as.numeric(count_lp_legor),
+         FGM_lp_legor = as.numeric(LnumberFGM_lp_legor)/as.numeric(count_lp_legor),
+         trafficking_lp_legor = as.numeric(Lnumbertrafficking_lp_legor)/as.numeric(count_lp_legor),
+         CEF_lp_legor = as.numeric(LnumberCEF_lp_legor)/as.numeric(count_lp_legor))
+
 # create time and time^2 variable by first adoption of law against crimes aginst women #
 replication4 <- replication4 %>%
   mutate(time = year - 1908)
@@ -503,6 +628,9 @@ replication$lag.NAP_sexual_harassment[which(is.na(replication$lag.NAP_sexual_har
 replication$lag.NAP_FGM[which(is.na(replication$lag.NAP_FGM))] <- 0
 replication$lag.NAPL_trafficking[which(is.na(replication$lag.NAPL_trafficking))] <- 0
 replication$lag.NAPL_child_ealry_forced[which(is.na(replication$lag.NAPL_child_ealry_forced))] <- 0
+
+
+         
 
 
 # getting out replication for running stata #
