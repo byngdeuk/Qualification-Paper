@@ -54,13 +54,40 @@ replication4 <- replication4 %>%
 
 replication4 <- replication4 %>%
   group_by(ccode) %>%
-  mutate(lag.actotal = dplyr::lag(actotal, n=1, default = NA)) 
+  mutate(lag.actotal = dplyr::lag(actotal, n=1, default = NA)) %>%
+  mutate(lag.Femployment15ILO = dplyr::lag(Femployment15ILO, n=1, default = NA)) %>%
+  mutate(lag.Femployment15NAT = dplyr::lag(Femployment15NAT, n=1, default = NA)) %>%
+  mutate(lag.Flaborforceparticipation15 = dplyr::lag(Flaborforceparticipation15, n=1, default = NA)) %>%
+  mutate(lag.Flaborforceparticipation15NAT = dplyr::lag(Flaborforceparticipation15NAT, n=1, default = NA)) %>%
+  mutate(lag.Flaborforceparticipation1564 = dplyr::lag(Flaborforceparticipation1564, n=1, default = NA)) %>%
+  mutate(lag.Fprimarygross = dplyr::lag(Fprimarygross, n=1, default = NA)) %>%
+  mutate(lag.Fprimarynet = dplyr::lag(Fprimarynet, n=1, default = NA)) %>%
+  mutate(lag.Fsecondarygross = dplyr::lag(Fsecondarygross, n=1, default = NA)) %>%
+  mutate(lag.Fsecondarynet = dplyr::lag(Fsecondarynet, n=1, default = NA)) %>%
+  mutate(lag.FunemploymentILO = dplyr::lag(FunemploymentILO, n=1, default = NA)) %>%
+  mutate(lag.FunemploymentNAT = dplyr::lag(FunemploymentNAT, n=1, default = NA)) %>%
+  mutate(lag.FwageILO = dplyr::lag(FwageILO, n=1, default = NA)) %>%
+  mutate(lag.Fparliaments = dplyr::lag(Fparliaments, n=1, default = NA))
+
 
 #replace na of laggded to 0#
 replication4$lag.L_has_any[which(is.na(replication4$lag.L_has_any))] <- 0
 replication4$lag.NAP_has_any[which(is.na(replication4$lag.NAP_has_any))] <- 0
 replication4$lag.L_has_num[which(is.na(replication4$lag.L_has_num))] <- 0
 replication4$lag.NAP_has_num[which(is.na(replication4$lag.NAP_has_num))] <- 0
+replication4$lag.Femployment15ILO[which(is.na(replication4$lag.Femployment15ILO))] <- 0
+replication4$lag.Femployment15NAT[which(is.na(replication4$lag.Femployment15NAT))] <- 0
+replication4$lag.Flaborforceparticipation15[which(is.na(replication4$lag.Flaborforceparticipation15))] <- 0
+replication4$lag.Flaborforceparticipation15NAT[which(is.na(replication4$lag.Flaborforceparticipation15NAT))] <- 0
+replication4$lag.Flaborforceparticipation1564[which(is.na(replication4$lag.Flaborforceparticipation1564))] <- 0
+replication4$lag.Fprimarygross[which(is.na(replication4$lag.Fprimarygross))] <- 0
+replication4$lag.Fprimarynet[which(is.na(replication4$lag.Fprimarynet))] <- 0
+replication4$lag.Fsecondarygross[which(is.na(replication4$lag.Fsecondarygross))] <- 0
+replication4$lag.Fsecondarynet[which(is.na(replication4$lag.Fsecondarynet))] <- 0
+replication4$lag.FunemploymentILO[which(is.na(replication4$lag.FunemploymentILO))] <- 0
+replication4$lag.FunemploymentNAT[which(is.na(replication4$lag.FunemploymentNAT))] <- 0
+replication4$lag.FwageILO[which(is.na(replication4$lag.FwageILO))] <- 0
+replication4$lag.Fparliaments[which(is.na(replication4$lag.Fparliaments))] <- 0
 
 
 # replace NA of ht_region and ht_colonial with first observed value by ccode  because region and colonial heritage didn't change over time #
