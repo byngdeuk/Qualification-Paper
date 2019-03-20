@@ -75,19 +75,6 @@ replication4$lag.L_has_any[which(is.na(replication4$lag.L_has_any))] <- 0
 replication4$lag.NAP_has_any[which(is.na(replication4$lag.NAP_has_any))] <- 0
 replication4$lag.L_has_num[which(is.na(replication4$lag.L_has_num))] <- 0
 replication4$lag.NAP_has_num[which(is.na(replication4$lag.NAP_has_num))] <- 0
-replication4$lag.Femployment15ILO[which(is.na(replication4$lag.Femployment15ILO))] <- 0
-replication4$lag.Femployment15NAT[which(is.na(replication4$lag.Femployment15NAT))] <- 0
-replication4$lag.Flaborforceparticipation15[which(is.na(replication4$lag.Flaborforceparticipation15))] <- 0
-replication4$lag.Flaborforceparticipation15NAT[which(is.na(replication4$lag.Flaborforceparticipation15NAT))] <- 0
-replication4$lag.Flaborforceparticipation1564[which(is.na(replication4$lag.Flaborforceparticipation1564))] <- 0
-replication4$lag.Fprimarygross[which(is.na(replication4$lag.Fprimarygross))] <- 0
-replication4$lag.Fprimarynet[which(is.na(replication4$lag.Fprimarynet))] <- 0
-replication4$lag.Fsecondarygross[which(is.na(replication4$lag.Fsecondarygross))] <- 0
-replication4$lag.Fsecondarynet[which(is.na(replication4$lag.Fsecondarynet))] <- 0
-replication4$lag.FunemploymentILO[which(is.na(replication4$lag.FunemploymentILO))] <- 0
-replication4$lag.FunemploymentNAT[which(is.na(replication4$lag.FunemploymentNAT))] <- 0
-replication4$lag.FwageILO[which(is.na(replication4$lag.FwageILO))] <- 0
-replication4$lag.Fparliaments[which(is.na(replication4$lag.Fparliaments))] <- 0
 
 
 # replace NA of ht_region and ht_colonial with first observed value by ccode  because region and colonial heritage didn't change over time #
