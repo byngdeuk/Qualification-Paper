@@ -11,82 +11,261 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### 1. Introduction
-Nowadays, there are many problems related to violence against women including sexual harassment and sexual violence. The absence of laws for discerning whether certain behavior is crime or not exacerbates those problems. (Add examples) Laws are the very basic tools to regulate crimes against women. Crimes against women is not only problem in Developing countires, but also Developed countries. Why and when do countries adopt laws against crimes against women. However, adopting laws should not be an end-stage. It is a startline for regulating crimes against women. The more important thing is implementing laws practically. (UN data explanation + diffusion with steps explanation) 
+Diffusion after Diffusion:
+Adoption and Implementation of Laws about Violence Against Women
+Byung-Deuk Woo
 
+Abstract
+Violence Against Women (VAW) is a severe problem in the world, regardless of regime types, cultures, and the level of development. However, many countries still lack of the very basic tool to regulate VAW. In this paper, I deal with the question: why, when, and how countries adopt laws about violence against women. Moreover, I look at the implementation of that laws with several event history analysis including monadic, dyadic, and pooled event history analysis. I find out that regional diffusion occurs when countries adopt or emulate other countries. Moreover, women political empowerment increases the probability of adoption and implementation of laws about violence against women. Especially, the percent of women in parliaments matters. This finding provides an empirical support for gender quotas in parliaments.
+Key Words: Violence Against Women, Laws, Implementation, Women Political Empowerment, Gender Quotas.
 
-### Research Design
+Nowadays, there are many problems related to violence against women including sexual harassment and sexual violence. The absence of laws for discerning whether certain behavior is crime or not exacerbates those problems. Laws are the very basic tools to regulate crimes against women. Crimes against women is a problem not only in Developing countries, but also in Developed countries. In this article, I will try to answer the following question: “why and when do countries adopt laws against crimes against women?” However, adopting laws should not be an end-stage. Even when there is a law for eradicating crimes against women, if it is not successfully implemented, a presence of a law cannot deal with crimes against women (Askin 1997). It is a start line for regulating crimes against women. The more important thing is implementing laws practically. Therefore, my research does not end with answering the first question. However, I will answer the question: “why and when do countries implement laws against crimes against women?” 
 
-Diffusion of laws and National Action Plan against women crimes in the world.
+Literature Review
+Policy diffusion researches has been conducted a lot in American Politics area based on rich resources and data (Walker 1969; Gray 1973; Mooney 2001; Savage 1985; Karch 2006; Mintrom and Vergari 1998; Shipan and Volden 2008). Most of topics deal with why, when, and how states adopt of various policies or laws. Not only in American Politics, but also policy diffusion is studied broadly in International Relations and Comparative Politics (Graham et al. 2012; Collier and Messick 1975; Radaelli 2007; Gilardi 2012; Graham et al. 2014; Gilardi et al. 2008).
+Diffusion has been studied through event history analysis and scholars focus on various mechanisms behind diffusion. For example, Berry and Berry (1990) uses an event history analysis and they show that internal and external determinants, such as regional diffusion, models are compatible. Diffusion studied with an event history analysis has been developed in various ways. Boehmke (2009a) provides sophisticated modeling strategies dealing with multiple components such as pooled event history model that can be used for answering various questions. Some scholars combine additional models with an event history analysis. Pacheco (2012) uses a social contagion model and finds out mechanism of learning. Moreover, Marsh and Sharman (2009) find out that policy diffusion and policy transfer can be applied together and those two are complimentary. 
+The most important advance in diffusion and event history analysis is the introduction of dyadic event history analysis. Previously, monadic approach is the main way to study diffusion and event history analysis. Volden (2006) opens a new way to study specific mechanisms behind diffusion such as emulation, learning, and competition. Dyadic event history analysis has been modified and developed. By using Monte Carlo analysis, Boehmke (2009b) finds out that we need to deal with a source of bias by removing observations with zero probability of emulation for more accurate estimation. Gilardi (2010) provides ways to consider heteroscedasticity possibly existing in dyadic level, each country in dyad, and year by using multilevel methods. Based on these contribution, dyadic event history analysis has been widely used for decade (Volden 2016; Gilardi 2008; Füglister 2011).
+Gilardi (2016) provides four strategies for improving diffusion research. Based on his advices, I follow the existing definition of diffusion from Strang (1991): any kinds of processes that change the probability of adoption for the non-adopters. In this article, I deal with several questions related to when, why, and how countries adopt laws and implement them by using dyadic event history analysis for 191 countries from 1908 to 2016.
 
+Violence against Women
+Gender, Race, Religion, etc. are the main topics of discrimination. In this paper, I want to focus on gender, especially women because discrimination against women is severe problem regardless of race or religion. Protecting women rights and empowering women have been a hotly debated topic for several decades (Carroll 1994; Rowlands 1997; Bunch 1990; Doepke et al. 2012; Duflo 2012; Hall 2013). Those articles focus on explaining why women right or women empowerment is far behind those of men. Protecting women rights is the pre-requisite of empowering women. Solid protection of women rights enables women to invest their time, effort, and talent to their works. As Watts and Zimmerman (2002), and Devries et al. (2013) point out, violence against women is a severe problem in the world. Violence against women is a huge impediment to achieving gender equality (http://evaw-global-database.unwomen.org/en/about). The absence of this protection undermines the base of women empowerments. For example, if women in school or women in work place are exposed to the risk of sexual violence or sexual harassment, they cannot fully exert their talents. Moreover, if there is no law against such crimes, it prevents women from seeking empowerment. Therefore, debates and researches about violence against women should be preceded before we talk about women empowerment. 
+In order to study adoption of law and National Action Plan about violence against women, first I have to define what “women” are and what “violence against women” is. In this article, I follow the definition of “women” and “violence against women” from UN WOMEN.
 
-## Descriptive statistics for women crimes
-http://www.unwomen.org/en/what-we-do/ending-violence-against-women/facts-and-figures#notes
-Show how severe the crimes are.
+“The term “women” refers to females of all ages, including girls” (http://evaw-global-database.unwomen.org/en/about).
 
+According to the above definition, “women” is females regardless of all age. I use the term “violence against women” defined as below.
 
+“any act of gender-based violence that results in, or is likely to result in, physical, sexual or psychological harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life” (http://evaw-global-database.unwomen.org/en/about).
 
-## Theory: When and Why Do Countries Adopt Laws Against Women Crimes?
+Thus, “violence against women” has less broad meaning than “gender-based violence”. In the following section, I will explain why I focus on domestic laws and National Action Plan related to violence against women.
 
+Why laws, especially domestic laws?
+Law is the basic way to control crimes, protect individual rights, and maintain social justice (Harel 2014). Even though interpretations of laws sometimes depend on social norms (Macnamara and Sagarin 1977), the absence of laws prevent us from discriminating whether certain behavior is punishable or not. 
+We can study adoption of constitution or regulation related to violence against women instead of law. However, there are methodological and substantive limitations for studying adoption of constitution or regulation. related to violence against women. First, constitution is usually written or created when an individual country is built or gets independence. Moreover, constitutions are hard to be changed or revised (Bánkuti et al. 2012). Methodologically, it means that there are less variations in dependent variable if I use adoptions or revisions of constitutions as my dependent variable. Substantively, implementation of constitution highly depends on judicial interpretation. Moreover, constitutions related to women rights usually expressed vary broadly without indicating which behaviors should be considered as crimes or not. It makes proper punishment more difficult. 
+It is hard to use regulation related to violence against women also. The OECD defines regulation as below.
 
-## Data & Method
-Figure: Proliferation of Laws against Women Crimes (by sort of crimes)
-Figure: Cumulative graph of the number of countries having laws against women crimes.
-Figure: Survival Functions 
+“imposition of rules by government, backed by the use of penalties that are intended specifically to modify the economic behavior our individuals and firms in the private sector. Various regulatory instruments or targets exist. Prices output, rate of return (in the form of profits, margins or commissions), disclosure of information, standards and ownership ceilings are among those frequently used” (OECD 2002).
 
-Map: Countries with Laws against Women Crimes (by sort of crimes) 
-(Weidmann, Nils B., Doreen Kuse, and Kristian Skrede Gleditsch. "The Geography of the International System: The CShapes Dataset." International Interactions 36, no. 1 (2010).)
+It means that regulation includes laws, orders, norms, decrees, or other forms of administrative guidance (Black 2002). Using adoption of regulation means that we deal with the above legal forms equally. However, they have different legal powers and efficiency, even though the degrees of differences depend on individual countries’ legal system. Therefore, it is hard to find reasons for studying adoption of regulation.
+Thus, studying adoption of laws related to violence against women is more appropriate than studying that of constitutions or regulations and adopting laws should be a starting point of eradicating violence against women.
+There are domestic and international laws for controlling violence against women. In this article, I deal with only adoption of domestic laws of individual countries instead of international laws because of the following reasons. International laws about violence against women are usually related to war crimes, especially under armed conflicts (Chinkin 1994; Copelon 2000; Meron 1993; Edwards 2010). Therefore, international laws about violence against women have limitations. Firstly, and most importantly, international laws do not deal with domestic violence against women when there are no wars or armed conflicts. Women rights are not problems only during wars or armed conflicts. Women rights should be dealt even when there are no certain disturbances. In addition, international laws related to women’s rights and issues are marginalized (Johnson et al. 2008). In other words, it is not efficient and proper ways to control violence against women in individual countries yet. Secondly, even though we only care about crimes against women during war, there is still a problem that international laws cannot be easily enforced because of lack of authority. Therefore, I will focus on the adoption of domestic law rather than international law. 
 
-## Variables
+Why laws are not enough? 
+As described in the previous section, laws are important because it is the starting point of eradicating and punishing crimes against women. Adopting laws related violence against women is valuable itself. However, we cannot reduce or prevent crimes against women only with laws. Laws lose their meaning under the lack of proper implementation.
+Lack of implementation is a severe problem not only in developing countries, but also in developed countries regardless of topics of laws. Related to laws of violence against women,  Neumann (2017) points out that traditional legal and bureaucratic strategies are not enough to eradicating violence against women by conducting a case study in Nicaragua. Moreover, Karjane et al. (2005) find out that sexual assault is still big problem in the United States despite of the presence of Federal law, “the Cleary Act of 1990 and the Campus Sexual Assault Victims’ Bill of Rights of 1992.” Thus, we must consider beyond the adoption of laws related to violence against women in order to take advantage of the existing laws. 
+In this paper, I use whether an individual country has National Action Plan (NAP) or not as criteria for the existence of implementation of laws related to crimes against women. I will explain it further in the Variable section.
 
-#Dependent Variables
-Adoption of Laws Against Women Crimes - (evaw-global-database.unwomen.org)
-Description: I use brand-new database for laws against women ccrimes from UN. UN WOMEN Global Database on Violence against Women provides database about laws against women crimes for 195 countries in the world. Developed in 2016, the database deals with the ways how countries address violence against women: laws, policies, budgets, services, prevention, perpetrators programmes, regional and international initiatives, monitoring and evaluation, etc. I will focus on the laws agasint women crimes because laws are the basic methods for preventing crimes. Again, the database subcategorizes laws into Constitutional Provision, Legislation, and Regulations. I use the data related to Legislation because of several reasons. First, Constitutional Provision is really hard to be changed. It means that there are less variations. Second, Regulations are usually based on legislation and less efficient than legislation. Therefore, I will focus on Legislation. 
+Theory and Hypotheses: When and Why Do Countries Adopt Laws about Violence Against Women?
+When and why do countries adopt laws about violence against women? There are several possible answers for this question. Frist, women political empowerment can increase the probability of adoption and implementation of laws. High-Pippert and Comer (1998) argue that women represented by women tend to participate more and more interested in politics. Moreover, Swers (2002) finds out that female legislators pay more attention on gender issues. Therefore, I will focus on the percent of women in parliaments because it can directly influence the adoption and implementation of laws about violence against women. 
 
-(Citation: I have to re-write) The United Nations defines violence against women as "any act of gender-based violence that results in, or is likely to result in, physical, sexual or psychological harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public or in private life" (General Assembly Resolution 48/104 Declaration on the Elimination of Violence against women, 1993).
+Hypothesis 1: High percentage of women in legislatures increases the probability of adopting laws and implementation about violence against women.
 
-Throughout the site, unless specified differently, the term "women" refers to females of all ages, including girls (UN General Assembly, 2006)
+Second, countries might try to adopt and implement laws about violence against women when they recognize the seriousness of violence against women. In other words, countries will put legal effort for women rights when there are many victims from violence against women. For example, wars and armed conflicts negatively influence women rights (McKay 1998; Denov 2006; MacKinnon 1994). Thus, I will test the following hypothesis.
 
-The sources of information of UN women global database on violence against women: Government reports to human rights bodies, including the Committee on the Elimination of Discrimination against Women (CEDAW) and the Universal Periodic Review (UPR). Information provided by Governments in follow-up to the Fourth World Conference on Women in Beijing (1995), including: the outcomes of the twenty-third special session of the UN General Assembly (2000); and the national review of implementation of the Beijing Declaration and Platform for Action in the context of the 20th anniversary of the adoption of the Beijing Declaration and Platform for Action (2015). Information available through official reports of other relevant United Nations entities. Government statements made at the United Nations.
+Hypothesis 2: Political violence increases the probability of adopting laws and implementation about violence against women.
 
+In addition, international treaty can influence the adoption and implementation of laws about violence against women. One of the important international treaty against violence against women is Convention on the Elimination of All Forms of Discrimination Against Women (CEDAW). It deals with gender-based violence even though it does not directly address violence against women (Goldberg and Kelly 1993). CEDAW has been ratified by 189 countries and, according to article 18, those countries should report their progress in implementing CEDAW in their countries (Convention on the Elimination of All Forms of Discrimination against Women). Thus, countries ratifying CEDAW are under pressure of following instructions of UN. 
 
-# Explanatory Variables
-Domestic Explanatory Variables
+Hypothesis 3: Ratifying CEDAW increases the probability of adopting laws and implementation about violence against women.
 
-Total summed magnitudes of all societal and interstate major episodes of political violence (MEPV)
-Domestic political unstability can affect negatively the effort to adopt laws against crimes against women and National Action Plan. 
+Moreover, I will test diffusion mechanisms related to adoption and implementation of laws about violence against women. In my research, I investigate the influence of regional diffusion, diffusion among countries with same legal system and with same colonial heritage. Moreover, I will test the influence of pressures from international treaty. Followings are the four hypotheses related to diffusion.
 
-Level of democracy from polity2
+Hypothesis 4: High percentage of countries with laws and implementation in the same region increases the probability of adopting laws and implementation about violence against women.
+
+Hypothesis 5: High percentage of countries with laws and implementation in the same legal system increases the probability of adopting laws and implementation about violence against women.
+
+Hypothesis 6: High percentage of countries with laws and implementation with the same colonial heritage increases the probability of adopting laws and implementation about violence against women.
+
+Hypothesis 7: High percentage of countries ratifying CEDAW increases the probability of adopting laws and implementation about violence against women.
+
+I also test the possible influence of the level of economic development and democracy on the adoption and implementation of laws about violence against women. 
+
+Hypothesis 8: Economic development increases the probability of adopting laws and implementation about violence against women.
+
+Hypothesis 9: Democracy increases the probability of adopting laws and implementation about violence against women.
+
+In the next section, I explain variables and dataset that I use in my research for testing the above hypotheses. 
+
+Variables
+For testing hypotheses described in the previous section, I use database from UN WOMEN Global Database(UN WOMEN Global Database on Violence against Women  2016) for adoptions of laws and National Action Plans. As independent variables, I use MEPV data (Marshall 2017) for measuring the level of violence in a country, GDP per capita from Maddison dataset (Bolt et al. 2018) for economic development, V-Dem dataset (Coppedge et al. 2018) for women political empowerment, polity 2 (Marshall et al. 2018) for level of democracy, and ratification of CEDAW for measuring the influence of international treaty. As diffusion variables, I use QOG dataset (Teorell et al. 2018) for studying diffusion among countries with same colonial heritage, legal system, and region.
+
+Dependent Variables: Adoption of Laws and Implementation
+According to my research questions, I use two dependent variables: adoption of laws against violence against women, and adoption of National Action Plan against violence against women.
+I use brand-new database for laws and National Action Plan against violence against women from UN WOMEN GLOBAL Database (UN WOMEN Global Database on Violence against Women  2016). UN WOMEN Global Database on Violence against Women provides database about laws against women crimes for 191 countries in the world (List of countries in Appendix 1). Developed in 2016, the database deals with the ways how countries address violence against women: laws, policies, budgets, services, prevention, perpetrators programs, regional and international initiatives, monitoring and evaluation, etc. 
+This database subcategorizes crimes into Femicide/Feminicide, Forced Sterilization, Stalking, Violence Against Women and Girls, Domestic Violence/Intimate Partner Violence, Sexual Violence, Sexual Harassment, Female Genital Multilation/Cutting(FGM/C), Trafficking, Child, Early and Forced Marriage, New Forms of Violence, and Violence related to Property. 
+
+Figure 1
+  
+The first adoption of laws against violence against women happened in 1908 by Japan. As you can see, there is a S-curve related to the cumulative number of countries with laws against violence against women. I use binary dependent variable for the adoption of law against violence against women. I assign 1 for country-year when the country adopts a law. On the other hand, I code country-year as 0.
+However, as I mentioned in the previous section, the adoption of laws against violence against women should not be the end stage. Successful implementation is more important than adopting laws for eradicating violence against women. Even though implementation is important than adopting laws, it is hard to conceptualize implementation and measure the level of implementation. 
+I overcome this problem also by using data from UN WOMEN GLOBAL Database. In addition to laws, this database provides the list of countries which have National Action Plan for eradicating violence against women. It provides explanation about National Action Plan as below. 
+
+“Laws on violence against women should require creation of a national action plan to eliminate violence against women. A national action plan can be extremely useful tool with which assess strengths and weaknesses, set targets, identify private organizations that can help implement new laws or priorities, and plot future initiatives to prevent violence against women. Action plans and strategies should also provide for consistent funding of implementation programs.” (UN WOMEN: United Nations Entity for Gender Equality and the Empowerment of Women)
+
+Based on the above explanation, National Action Plan is a step toward successful implementation of laws about violence against women. It includes several activities for implementing laws. I code 1 for country-year when the country builds National Action Plan. On the other hand, I assign 0. 
+
+Figure 2
+ 
+ 
+
+Figure 2 shows the cumulative number of countries with NAP and the number of countries adopting NAP about violence against women. As you can see, the first adoption of NAP happened in 1988 and many countries adopted NAP from 2004 to 2012. 
+
+Independent Variables
+Missing data can cause biases and inefficiencies (Honaker and King 2010). Therefore, when I select explanatory variables, I try to use dataset with large enough data span that can be used for testing my hypotheses. Below is the descriptive table for the variables that I use in this research.
+ 
+Political Violence
+I use Major Episodes of Political Violence (MEPV) dataset (Marshall 2017) in order to measure violence and see the relationship between domestic instability and adoption of laws and implementation. This dataset provides violence score for each country from 1946 to 2016. I use total summed magnitudes of all societal and interstate MEPV score ranges from 0 to 20 without modification. The higher score indicates more violence. 
+
+Polity2
+For testing the relationship between level of democracy and adoption of law and implementation, I use polity dataset (Marshall et al. 2018) rather than Freedom House data. Selecting measurement about level of democracy should be considered seriously because it makes the results totally different (Högström 2013; Casper and Tufis 2002 ). Therefore, when select dataset about democracy, we need persuasive reasons based on research questions.
+I have two main reasons for selecting polity dataset. First, polity dataset has larger time span. Freedom House data covers from 1972 to present. It is not enough for testing my hypotheses because the first adoption of law happened in 1908. On the other hand, polity dataset covers from 1800 to present (Marshall et al. 2002). Thus, I can eliminate missing values by using polity dataset. Second, Freedom House dataset is criticized by scholars because of bias and less consistency nowadays. For example, Steiner (2016) argues that there is a substantial bias in the Freedom House score before 1988 and there is a less consistency after 1989.
+Based on those two reasons, I use polity dataset in this research. Polity 2 score ranges from -10 to +10.
 
 Women political empowerment
+Next is Women political empowerment. I use V-Dem dataset (Coppedge et al. 2018) for testing whether there is a relationship between women political empowerment and the adoption of laws and implementation. Even though there are various definitions about women empowerment, V-Dem dataset follows the below definition.
 
-GDP per capita
+We define women’s political empowerment as a process of increasing capacity for women, leading to greater choice, agency, and participation in societal decision-making. Our definition is three dimensional capturing the three most prominent strands in thinking on empowerment: that of choice, that of agency, and that of participation (Sundström et al. 2015).
 
-
-# Diffusion Variables
-
-Colonial heritage
-
-Religion
-
-Geo-Political region
-
-Legal origin
+In my research, I will follow the definition from the above. The women political empowerment index from V-Dem spans from 1946 to present. It use three equally-weighted dimensions of civil liberties, women’s open discussion and participation, and the level of presentation of women in political positions (Coppedge et al. 2018).
+Moreover, I use separated indexes from World Bank for seeing the influence of the percent of women in parliaments. However, I use the separated indexes only for the adoption of NAP because the data span from World Bank is from 1960. For adoption of laws about violence against women I use women political empowerment index from V-Dem dataset. 
 
 CEDAW
+As you can see on the cumulative graphs, the number of adoptions of laws and implementation about violence against women increased after 1980s. There are several possible explanations for this trend.
+First, This trend of adoptions can be related to the increased number of countries which get independence especially in Africa after (Meredith 2005). However, the increased number of countries cannot fully explain the trend because there are still political and economical instability in African countries (Fosu 1992; Asiedu 2006; Lagi et al. 2011).
+Second, world conferences on women can influence on the probability of adoption of laws and implementations. World conference on women held four times: Mexico City in 1975, Copenhagen in 1980, Nairobi in 1985, and Beijing in 1995. The agendas are related not only to human rights or environmental rights, but also to move women from periphery to center (Moghadam 1996; Bunch and Fried 1996). Especially, the Fourth World Conference on Women (FWCW) in Beijing was the largest conference on women and numerous Non-Governmental Organization participated to this conference. 
+However, the main issue dealt in FWCW is not the violence against women. Rather, it was focused on women health, working environment of women (WHO 1996), and women in the linkage between political and international economic situations (Agarwal 1996). Even though there were discussions about women rights, there are limitations. FWCW did not deal with women rights in countries where women rights are desperately needed. For example, several countries including Saudi Arabia, Granada, Somalia, Federal Republic of Yugoslavia do not attend the conference or were not invited (Otto 1996).  
+Therefore, I concentrate on Convention on the Elimination of All Forms of Discrimination against Women (CEDAW) instead of those two possible explanations. 
 
+GDP per Capita
+I get data about GDP per capita from Maddison Project Database (Bolt et al. 2018). The main reason why I use Maddison Project Database is that it has longer time span than any other data about GDP per capita. For example, World Bank provides GDP per capita data from 1960 to 2017. On the other hand, Maddison Project Database deals with GDP per capita of prior to 1960 (Smits et al. 2009). 
 
-# Control Variables
+Diffusion Variables
+For diffusion variables, I use percentage of countries adopting laws and National Action Plan for regional diffusion, diffusion among countries with the same colonial heritage and legal system . I use the categories from the Quality Of Government 2018 standard dataset 2018 (Teorell et al. 2018). 
+QOG categorizes colonial origin into ten subcategories: Never colonized by a Western overseas colonial power, Dutch, Spanish, Italian, US, British, French, Portuguese, Belgian, British-French, and Australian. For Geo-Political region, there are 10 subcategories: Eastern Europe and post Soviet Union, Latin America, North Africa & the Middle East, Sub-Saharan Africa Western Europe and North America, East Asia, South-East Asia, South Asia, The Pacific, and The Caribbean. 
+There are five categories for legal origin: English Common Law, French Commercial Code, Socialist/Communist Laws, German Commercial Code, and Scandinavian Commercial Code. QOG dataset covers from 1946 to 2017. According to each country’s history, I fill up colonial heritage before 1946. For constructing diffusion, I divide number of countries with laws or NAP by total number of countries with same colonial heritage, same geo-political region, or legal system by year.
+Figure 3
+ 
+Figure 3 shows the countries with laws about violence against women in 1996. We can guess that there might be influences of diffusion among countries with the same region, colonial heritage, and legal system. 
 
+Method
+I apply several methods for testing my research hypotheses. First, I will use monadic event history analysis. In monadic event history analysis, the unit of analysis is country-year. By using this approach, I can test which kinds of variables affect the probability of adoption and implementation of laws. 
+Moreover, I will use pooled event history analysis because violence against women includes various forms of violence. In my research, I include eight different forms of violence: stalking, violence against women, domestic violence, sextual violence, sextual harassment, Female Genital Mutilation, trafficking, and child early forced marriage. I include certain form of violence if more than 30 countries adopt laws against that form of violence. By using pooled event history analysis, I can model the heterogeneity in different forms of violence (Kreitzer and Boehmke 2016). 
+In addition to monadic approaches, I want to test which kind of mechanisms behind diffusion. Thus, I use dyadic event history analysis for testing the probability of emulation. I will not test other mechanisms such as learning or competition because of lack of data. In dyadic models, the unit of analysis is country A – county B – year. Based on Boehmke (2009b), I use conditioned dyadic event history model which eliminates observations with zero probability of emulation. Also, I combine pooled event history analysis and dyadic approach for testing my hypotheses. 
+For investigating questions about why, when, and how countries implement laws about violence against women, I model diffusion after diffusion. Countries need to adopt laws first before they implement them. In other words, countries without laws cannot implement that laws logically. Thus, if we include observations about countries before adopting laws, we introduce bias and make coefficient inefficient. Therefore, I exclude observations without laws about violence against women. It does not mean that I lose information because county A in those observations has zero probability of emulating country B because they do not have laws.
+In the next section, I provide the results of various models that I described. 
 
-# Event History Analysis
-Figure: Estimated Survival Probabilities of Law against women crimes for 195 countries
-Figure: Estimated Survival Probabilities of Law against women crimes for 195 countries by Regime Type
+Result
+Table 2 shows the results of four models about diffusion of laws about violence against women. Model 1 shows the result of the monadic event history analysis and Model 2 is the result of pooled event history analysis with monadic unit of analysis. You can see the model with separate forms of violence in appendix. Model 3 shows the result of conditioned dyadic event history analysis, and Model 4 is the result of pooled event history analysis with dyadic unit of analysis. The four models show slightly different results with different coefficients and standard deviations.
+As you can see, political violence, women political empowerment, and regional diffusion have statistically significant positive relationships with the probability of adoption or emulation of violence against women. Those results support hypothesis 1, 2, and 4. 
+Specifically, ratification of CEDAW, the level of democracy, and Colonial Heritage for Law (%) also have statistically significant positive relationships. 
+ 
+Table 3 shows the results of five models for diffusion of NAP about violence against women. Model 1 is the simple event history analysis with monadic unit of analysis and Model 2 takes monadic approach but consider the steps of diffusion. As expected coefficients and standard deviations are different. 
 
+ 
+Model 3 is unconditioned dyadic event history analysis and model 4 is conditioned dyadic event history analysis which eliminate observations with zero probability of emulation. Standard errors and coefficients are different. Lastly, model 5 shows the result of diffusion with steps and conditioned event history analysis. 
+All five models show that women political empowerment is statistically significant with the probability of adoption and emulation of NAP about violence against women. Moreover, the percent of countries with ratification of CEDAW also increases those probabilities. 
 
-# Result
+ 
 
+I use separated indexes from World Bank in order to see the influence of percent of women in parliaments. I use same five models in Table 3 but with separated indexes instead of women political empowerment from V-Dem. As you can see percent of women in parliaments is statistically significant at the level of p<0.05 in all five models. Moreover, the percent of countries with CEDAW is statistically significant at the level of p<0.001.
 
-# Conclusion
+ 
+Note: Figure 4 shows the predicted probability of county A emulates country B based on the result from Model 5 in Table 4, while other independent and control variables are held at their mean values with a 95% confidential interval.
+
+The results show that influences of independent variables that I include in the models different based on whether countries adopt laws or NAP. For adopting laws about violence against women, countries’ level of political violence and women political empowerment increase the probability of adoption and emulation of laws. Moreover, there is regional diffusion. On the other hand, percent of countries having CEDAW and women political empowerment are positively related to the probability of adoption and emulation. Specifically, the percent of women in parliaments increases the probability. As figure 4 shows, the probability of emulation of NAP increases when the percent of women in parliaments increase. The change of the probability is not negligible when we consider the number of observations in Model 5 is large than the Model 1 and Model 2 using monadic approach.
+
+Discussions and Conclusion
+All the models that I use in this paper show us that the women political empowerment, especially the percent of women in parliament matters for the probability of adoption and implementation of laws about violence against women. 
+This finding gives a clue for the necessity of gender quotas in legislatures. Previous researches about gender quotas focus on why, when, and how countries adopt gender quotas (Caul 2001; Krook 2006; Teigen 2012; Hughes et al. 2015). However, there is a lack of empirical evidence that can support the claim that why do we need gender quotas in legislatures. My finding shows that gender quotas, especially “Reserved seats”, will be helpful for protecting women rights because it increase the probability of adoption and implementation of laws about violence against women. 
+Nowadays, still a lot of women suffer from violence including sexual violence, sexual harassment, violence from intimate partner, trafficking, etc., even though international organizations and international non-governmental organizations have put emphasis on violence against women and lots of countries achieve certain level of economic development compared to them in 20c. Laws are the very basic tool for regulating violence against women and violence against women is closely related to women rights in countries. Gender quotas can be a solution for the severe problem of violence against women. 
+
+Citation
+Agarwal, Bina. 1996. "From Mexico 1975 to Beijing 1995." Indian Journal of Gender Studies Vol. 3:1.
+Asiedu, Elizabeth. 2006. "Foreign direct investment in Africa: The role of natural resources, market size, government policy, institutions and political instability." World Economy Vol. 29 (Issue. 1):63-77.
+Askin, Kelly Dawn. 1997. War Crimes Against Women.
+Bánkuti, Miklós, Gábor Halmai, and Kim Lane Scheppele. 2012. "Hungary’s Illiberal Turn: Disabling the Constitution " Journal of Democracy Vol. 23 (No. 3):138-46.
+Berry, Frances Stokes, and William D. Berry. 1990. "State Lottery Adoptions as Policy Innovations: An Event History Analysis." American Political Science Revew Vol. 84 (Issue. 2):395-415.
+Black, Julia. 2002. "Critical Reflections on Regulation, 27."
+Boehmke, Frederick J. 2009a. "Approaches to Modeling the Adoption and Diffusion of Policies with Multiple Components " State Politics & Policy Quarterly Vol.9 (Issue 2):229-52.
+———. 2009b. "Policy Emulation or Policy Convergence? Potential Ambiguities in the Dyadic Event History Approach to State Policy Emulation." The Journal of Politics Vol. 71 (No. 3):1125-40.
+Bolt, Jutta, Robert Inklaar
+Herman de Jong, and Jan Luiten van Zamden. 2018. "REBASING 'MADDISON': NEW INCOME COMPARISONS AND THE SHAPE OF LONG-RUN ECONOMIC DEVELOPMENT."
+Bunch, Charlotte. 1990. "Women's Rights as Human Rights: Toward a ReVision of Human Rights." Human Rights Quarterly 12:486-98.
+Bunch, Charlotte, and Susana Fried. 1996. "Beijing '95: Moving Women's Human Rights from Margin to Center." Journal of Women in Culture and Society Vol. 22 (Number 1).
+Carroll, Susan. 1994. Women as Candidates in American Politics.
+Casper, Gretchen, and Claudiu Tufis. 2002 "Correlation versus Interchangeability: The Limited Robustness of Empirical Findings on Democracy using Highly Correlated Datasetsi " Political Analysis Vol. 11 (Issue 2(R)).
+Caul, Miki. 2001. "Political Parties and the Adoption of Candidate Gender Quotas: A Cross-National Analysis." Journal of Politics banner Vol. 63 (Issue 4):1214-29.
+Chinkin, Christine. 1994. "Rape and Sexual Abuse of Women in International Law." European Journal of International Law:326-41.
+Collier, David, and Richard E. Messick. 1975. "Prerequisites Versus Diffusion: Testing Alternative Explanations of Social Security Adoption." American Political Science Review Vol. 69 (Issue 4):1299-315.
+Convention on the Elimination of All Forms of Discrimination against Women. 2019.  [cited 03/25 2019]. Available from https://www.un.org/womenwatch/daw/cedaw/text/econvention.htm#article18.
+Copelon, R. 2000. "Gender Crimes as War Crimes: Integrating Crimes against Women into International Criminal Law." McGill law journal. Revue de droit de McGill 46(1):217-40.
+Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Svend-Erik Skaaning, Jan Teorell, David Altman, Michael Bernhard, Agnes Cornell, M. Steven Fish, Haakon Gjerløw, Adam Glynn, Allen Hicken, Joshua Krusell, Anna Lührmann, Kyle L. Marquardt, Kelly McMann, Valeriya Mechkova, Moa Olin, Pamela Paxton, Daniel Pemstein, Brigitte Seim, Rachel Sigman, Jeffrey Staton, Aksel Sundström, Eitan Tzelgov, Luca Uberti, Yi-ting Wang, Tore Wig, and Daniel Ziblatt. 2018. ""V-Dem Codebook v8" Varieties of Democracy (V-Dem)."
+Denov, Myriam S. 2006. "Wartime Sexual Violence: Assessing a Human Security Response to War-Affected Girls in Sierra Leone." Security Dialogue Vol. 37 (Issue 3):319-42.
+Devries, K. M., J. Y. T. Mak, C. Garcia-Moreno, M. Petzold, J. C. Child, G. Falder, S. Lim, L. J. Bacchus, R. E. Engell, L. Rosenfeld, C. Pallitto, T. Vos, N. Abrahams, and C. H. Watts. 2013. "The Global Prevalence of Intimate Partner Violence Against Women." Science Vol. 340 (Issue 6140):1527-8.
+Doepke, Matthias, Michèle Tertilt, and Alessandra Voena. 2012. "The Economics and Politics of Women's Rights." Annual Review of Economics Vol. 4:339-72.
+Duflo, Esther. 2012. "Women Empowerment and Economic Development." Journal of Economic Literature Vol. 50 (No. 4):1051-79.
+Edwards, Alice. 2010. Violence against Women under International Human Rights Law: Cambridge University Press.
+Fosu, Augustin Kwasi. 1992. "Political instability and economic growth: evidence from Sub-Saharan Africa." Economic Development and Cultural Change Vol. 40 (Issue. 4):829-41.
+Füglister, Katharina. 2011. "Where does learning take place? The role of intergovernmental cooperation in policy diffusion." European Journal of Political Research Vol. 51 (Issue 3):316-49.
+Gilardi, Fabrizio. 2010. "Who Learns from What in Policy Diffusion Processes?" American Journal of Political Science Vol. 54 (No. 3):650-66.
+———. 2012. Transnational Diffusion: Norms, Ideas, and Policies. Edited by W. Carlsnaes, T. Risse and B. Simmons. Vol. 453-77. Los Angeles, CA: SAGE.
+———. 2016. "Four Ways We can Improve Policy Diffusion Research." State Politics & Policy Quarterly Vol.16(1):8-21.
+Gilardi, Fabrizio, Katharina Füglister, and Stéphane Luyet. 2008. "Learning from Others: The Diffusion of Hospital Financing Reforms in OECD Countries." Comparative Political Studies Vol 42 (Issue 4):549-73.
+Gilardi, Farbrizio. 2008. "Empirical Modeling of Policy Diffusion in Federal States: The Dyadic Approach." Swiss Political Science Review 14(3):413-50.
+Goldberg, Pamela, and Nancy Kelly. 1993. "International Human Rights and Violence Against Women." 6 Harv. Hum. Rts. J.
+Graham, Erin R., Charles R. Shipan, and Craig Volden. 2012. "The Diffusion of Policy Diffusion Research in Political Science." Brithish Journal of Political Science Vol. 43 (Issue 3):673-701.
+———. 2014. "The Communication of Ideas across Subfields in Political Science." Political Science & Politics 47 (2):468-76.
+Gray, Virginia. 1973. "Innovation in the States: A Diffusion Study." American Political Science Revew 67 (4):1174-85.
+Hall, C. Margaret. 2013. Women and Empowerment: Strategies for Increasing Autonomy. 270 Madison Ave, New York NY 10016: Taylor & Francis.
+Harel, Alon. 2014. Why Law Matters: Oxford University Press.
+High-Pippert, Angela, and John Comer. 1998. "Female Empowerment." Women & Politics Vol. 19 (Issue 4):53-66.
+Högström, John. 2013. "Does the Choice of Democracy Measure Matter? Comparisons between the Two Leading Democracy Indices, Freedom House and Polity IV." Government and Opposition Volume 48 ( Issue 2 ).
+Honaker, James, and Gary King. 2010. "What to Do about Missing Values in Time‐Series Cross‐Section Data." American Journal of Political Science Vol. 54 (Issue. 2):561-81.
+Hughes, Melanie M., Mona Lena Krook, and Pamela Paxton. 2015. "Transnational Women's Activism and the Global Diffusion of Gender Quotas." International Studies Quarterly Vol. 59 (Issue 2):357-72.
+Johnson, Holly, Natalia Ollus, and Sami Nevala. 2008. Violence against women: an international perspective. New York: Springer.
+Karch, Andrew. 2006. "National Intervention and the Diffusion of Policy Innovations." American Politics Research Vol. 34 (Issue. 4):403-26.
+Karjane, Heather M., Bonnie S. Fisher, and Farancis T. Cullen. 2005. "Sexual Assault on Campus: What Colleges and Universities Are Doing About It." Washington, DC 20531: National Institute of Justice (NIJ).
+Kreitzer, Rebecca, and Frederick J. Boehmke. 2016. "Modeling Heterogeneity in Pooled Event History Analysis." State Politics & Policy Quarterly Vol. 16 (Issue 1):121-41.
+Krook, Mona Lena. 2006. "Reforming Representation: The Diffusion of Candidate Gender Quotas Worldwide." Politics & Gender Vol 2 (Issue 3):303-27.
+Lagi, Marco, Karla Z Bertrand, and Yaneer Bar-Yam. 2011. "The food crises and political instability in North Africa and the Middle East." Avilable at SSRN: https://ssrn.com/abstract=1910031 or http://dx.doi.org/10.2139/ssrn.1910031.
+MacKinnon, CA. 1994. Rape, Genocide, and Women's Human Rights: 17 Harv, Women's L.J. 5.
+Macnamara, D E J, and E Sagarin. 1977. SEX, CRIME, AND THE LAW. New Work, NY 10020: Free Press.
+Marsh, David, and J.C. Sharman. 2009. "Policy diffusion and policy transfer." Policy Studies Vol. 30 (Issue 3):269-88.
+Marshall, Monty G. 2017. "MAJOR EPISODES OF POLITICAL VIOLENCE (MEPV) AND CONFLICT REGIONS, 1946-2016." ed. C. f. S. Peace.
+Marshall, Monty G., Ted Robert Gurr, Christian Davenport, and Keith Jaggers. 2002. "POLITY IV, 1800-1999 Comments on Munck and Verkuilen." Comparative Political Studies Vol. 35 (No. 1):40-5.
+Marshall, Monty G., Ted Robert Gurr, and Keith Jaggers. 2018. "Political Regime Characteristics and Transitions, 1800-2017."
+McKay, Susan. 1998. "The effects of armed conflict on girls and women." Peace and Conflict: Journal of Peace Psychology Viol. 4 (Issue 4):381-92.
+Meredith, Martin. 2005. The State of Africa: A History of Fifty Years of Independence: Free Press.
+Meron, Theodor. 1993. "Rape as a Crime under International Humanitarian Law." American Journal of International Law Vol. 87 (Issue. 3):424-8.
+Mintrom, Michael, and Sandra Vergari. 1998. "Policy Networks and Innovation Diffusion: The Case of State Education Reforms." The Journal of Politics Vol. 60 (Issue. 1):126-48.
+Moghadam, Valentine M. 1996. "The Fourth World Conference on Women: Dissension and Consensus." Indian Journal of Gender Studies Vol. 3:1 
+Mooney, Christopher Z. 2001. "Modeling Regional Effects on State Policy Diffusion." Political Research Quarterly Vol. 54 (Issue. 1):103-24.
+Neumann, Pamela. 2017. "When Laws Are Not Enough: Violence against Women and Bureaucratic Practice in Nicaragua." Social Forces Vol. 95 (Issue 3):1105-25.
+OECD. GLOSSARY OF STATISTICAL TERMS  2002 [cited.
+Otto, Dianne. 1996. "Holding up Half the Sky, but for Whose Benefit: A Critical Analysis of the Fourth World Conference on Women " Australian Feminist Law Journal Vol. 6.
+Pacheco, Julianna. 2012. "The Social Contagion Model: Exploring the Role of Public Opinion on the Diffusion of Antismoking Legislation across the American States." The Journal of Politics Vol. 74 (Number 1):187-202.
+Radaelli, Claudio M. 2007. "Diffusion without convergence: how political context shapes the adoption of regulatory impact assessment." Journal of European Public Policy Vol. 12 (Issue. 5):924-43.
+Rowlands, Jo. 1997. Questioning Empowerment working with Women in Honduras: Oxfam.
+Savage, Robert L. 1985. "Diffusion Research Traditions and the Spread of Policy Innovations in a Federal System." Publius 15 (4):61-82.
+Shipan, Charles R., and Craig Volden. 2008. "The Mechanisms of Policy Diffusion." American Journal of Political Science Vol. 52 (Issue 4):840-57.
+Smits, J.P., P.J. Woltjer, and D. Ma. 2009. "A Dataset on Comparative Historical National Accounts, ca. 1870-1950: A Time-Series Pespective." ed. G. U. o. G. Groningen Growth and Development Centre Research Memorandum GD-107.
+Steiner, Nils D. 2016. "Comparing Freedom House Democracy Scores to Alternative Indices and Testing for Political Bias: Are US Allies Rated as More Democratic by Freedom House?" Journal of Comparative Policy Analysis: Research and Practice Vol. 18 (Issue 4).
+Strang, David. 1991. "Adding Social Structure to Diffusion Models: An Event History Framework." Sociological Methods & Research Vol.19 (3):324-53.
+Sundström, Aksel, Pamela Paxton, Yi-ting Wang, and Staffan I. Lindberg. 2015. "Women;s Political Empowerment: A New Global Index, 1900-2012." ed. V.-D. institute.
+Swers, Michele. 2002. The Difference Women Make: University of Chicago Press.
+Teigen, Mari. 2012. Chapter 4 Gender Quotas on Corporate Boards: On the Diffusion of a Distinct National Policy Reform. Edited by F. Engelstad and M. Teigen: Emerald Group Publishing Limited.
+Teorell, Jan, Stefan Dahlberg, Sören Holmberg, Bo Rothstein, Natalia Alvarado, and Pachon & Richard Svensson. 2018. "The Quality of Government Standard Dataset, version Jan18." ed. U. o. G. T. Q. o. G. Institute.
+UN WOMEN Global Database on Violence against Women.  2016 [cited. Available from http://evaw-global-database.unwomen.org/fr/about.
+Volden, Craig. 2006. "States as Policy Laboratories: Emulating Success in the Children's Health Insurance Program." American Journal of Political Science Vol. 50 (Issue 2):294-312.
+———. 2016. "Failures: Diffusion, Learning, and Policy Abandonment." State Politics & Policy Quarterly Vol. 16 ((1)):44-77.
+Walker, Jack L. 1969. "The Diffusion of Innovations among the American States." American Political Science Revew 63 (3):880-99.
+Watts, Charlotte, and Cathy Zimmerman. 2002. "Violence against women: global scope and magnitude." The Lancet Vol. 359 (Issue 9313):1232-7.
+WHO. 1996. "Women's Health Day, 5 September 1995, at the fourth World Conference on Women, Beijing, People's Republic of China." ed. W. H. Organization.
+
+Appendix
+1.	List of Countries in models.
+Afghanistan, Albania, Algeria, Andorra, Angola, Antigua and Barbuda, Argentina, Armenia, Australia, Austria, Azerbaijan, Bhamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia (Plurinational State of), Bosnia and Herzegovina, Botswana, Brazil, Brunei Darussalam, Bulgaria, Burkina Faso, Burundi, Cabo Verde, Cambodia, Cameroon, Canada, Central African Republic, Chad, Chile, China, Colombia, Comoros, Congo, Costa Rica, Côte D’Ivoire , Croatia, Cuba, Cyprus, Czech Republic, Democratic People's Republic of Korea, Democratic Republic of the Congo, Denmark, Djibouti, Dominica, Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Ethiopia, Fiji, Finland, France, Gabon, Gambia, Georgia, Germany, Ghana, Greece, Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Honduras, Hungary, Iceland, India, Indonesia, Iran (Islamic Republic of), Iraq, Ireland, Israel, Italy, Jamaica, Japan, Jordan, Kazakhstan, Kenya, Kiribati, Kuwait, Kyrgyzstan, Lao People's Democratic Republic, Latvia, Lebanon, Lesotho, Liberia, Libya, Liechtenstein, Lithuania, Luxembourg, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Marshall Islands, Mauritania, Maruritius, Mexico, Micronesia (Federated States of), Monaco, Mongolia, Montenegro, Morocco, Mozambique, Myanmar, Namibia, Nauru, Nepal, Netherlands, New Zealand, Nicaragua, Niger, Nigeria, Norway, Oman, Pakistan, Palau, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland, Portugal, Qatar, Republic of Korea, Republic of Moldova, Romania, Russian Federation, Rwanda, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Samoa, San Marino, Sao Tome and Principe, Saudi Arabia, Senegal, Serbia, Seychelles, Sierra Leone, Singapore, Slovakia, Slovenia, Solomon Islands, Somalia, South Africa, South Sudan, Spain, Sri Lanka, Sudan, Suriname, Swaziland, Sweden, Switzerland, Syrian Arab Republic, Tajikistan, Thailand, The Former Yogoslav Republic of Macedonia, Timor-Leste, Togo, Tonga, Trinidad and Tobago, Tunisia, Turkey, Turkmenistan, Tuvalu, Uganda, Ukraine, United Arab Emirates, United Kingdom of Great Britain and Northern Ireland, United Republic of Tanzania, United States of America, Uruguay, Uzbekistan, Vanuatu, Venezuela (Bolivarian Republic of), Viet Nam, Yemen
+2.	Models with laws about different types of violence.
+  
 
 
