@@ -370,6 +370,8 @@ map <- ggarrange(map1966, map1986, map1996, map2016,
 annotate_figure(map, top = text_grob("Figure 3: Countries with Laws about Violence Against Women", color = "black", face = "bold", size = 14),
              bottom = text_grob("Light Blue means a country with Laws and Dark Blue without Laws", face = "bold", size = 10))
 
+replication4$lawnap = replication4$L_has_any + replication4$NAP_has_any
+
 
 #NAP Maps#
 cshp.1990 <- cshp(date=as.Date("1990-6-30"), useGW=FALSE)
@@ -420,9 +422,62 @@ print(map2016N)
 library(ggpubr)
 mapN <- ggarrange(map1990, map2000, map2010, map2016N,
                  ncol = 2, nrow =2)
-annotate_figure(map, top = text_grob("Figure 3: Countries with NAP about Violence Against Women", color = "black", face = "bold", size = 14),
+annotate_figure(mapN, top = text_grob("Figure 4: Countries with NAP about Violence Against Women", color = "black", face = "bold", size = 14),
                 bottom = text_grob("Light Blue means a country with NAP and Dark Blue without NAP", face = "bold", size = 10))
 print(mapN)
+
+#### Maps for law and NAP
+my1990 <- fortify(cshp.1990)
+id <- c(cshp.1990$FEATUREID)
+ccode <- c(cshp.1990$COWCODE)
+df1990 <- data.frame(id,ccode)
+my1990M <- merge(my1990, df1990, by.my1990 = "id", by.df1990 = "id")
+d1990 <- subset(replication4, year == 1990)
+my1990M2 <- merge(my1990M, d1990, by.my1990M = "ccode", by.d1990 = "ccode")
+map1990 <- ggplot(my1990M2, aes(x=long, y=lat, group=group)) + geom_path() + geom_polygon(aes(fill = lawnap), colour = rgb(1,1,1,0.2)) + scale_fill_gradient("Blue", "Red") + ggtitle("1990")
+print(map1990)
+
+cshp.2000 <- cshp(date=as.Date("2000-6-30"), useGW=FALSE)
+my2000 <- fortify(cshp.2000)
+id <- c(cshp.2000$FEATUREID)
+ccode <- c(cshp.2000$COWCODE)
+df2000 <- data.frame(id,ccode)
+my2000M <- merge(my2000, df2000, by.my2000 = "id", by.df2000 = "id")
+d2000 <- subset(replication4, year == 2000)
+my2000M2 <- merge(my2000M, d2000, by.my2000M = "ccode", by.d2000 = "ccode")
+map2000 <- ggplot(my2000M2, aes(x=long, y=lat, group=group)) + geom_path() + geom_polygon(aes(fill = lawnap), colour = rgb(1,1,1,0.2)) + scale_fill_gradient("Blue", "Red") + ggtitle("2000")
+print(map2000)
+
+cshp.2010 <- cshp(date=as.Date("2010-6-30"), useGW=FALSE)
+my2010 <- fortify(cshp.2010)
+id <- c(cshp.2010$FEATUREID)
+ccode <- c(cshp.2010$COWCODE)
+df2010 <- data.frame(id,ccode)
+my2010M <- merge(my2010, df2010, by.my2010 = "id", by.df2010 = "id")
+d2010 <- subset(replication4, year == 2010)
+my2010M2 <- merge(my2010M, d2010, by.my2010M = "ccode", by.d2010 = "ccode")
+map2010 <- ggplot(my2010M2, aes(x=long, y=lat, group=group)) + geom_path() + geom_polygon(aes(fill = lawnap), colour = rgb(1,1,1,0.2)) + scale_fill_gradient("Blue", "Red") + ggtitle("2010")
+print(map2010)
+
+cshp.2016 <- cshp(date=as.Date("2016-6-30"), useGW=FALSE)
+my2016 <- fortify(cshp.2016)
+id <- c(cshp.2016$FEATUREID)
+ccode <- c(cshp.2016$COWCODE)
+df2016 <- data.frame(id,ccode)
+my2016M <- merge(my2016, df2016, by.my2016 = "id", by.df2016 = "id")
+d2016 <- subset(replication4, year == 2016)
+my2016M2 <- merge(my2016M, d2016, by.my2016M = "ccode", by.d2016 = "ccode")
+map2016N <- ggplot(my2016M2, aes(x=long, y=lat, group=group)) + geom_path() + geom_polygon(aes(fill = lawnap), colour = rgb(1,1,1,0.2)) + scale_fill_gradient("Blue", "Red") + ggtitle("2016")
+print(map2016N)
+
+#Combine Maps for NAP#
+library(ggpubr)
+mapN <- ggarrange(map1990, map2000, map2010, map2016N,
+                  ncol = 2, nrow =2)
+annotate_figure(mapN, top = text_grob("Figure 4: Countries with NAP about Violence Against Women", color = "black", face = "bold", size = 14),
+                bottom = text_grob("Light Blue means a country with NAP, Gray Blue with Law but not NAP, and Dark Blue without Law", face = "bold", size = 10))
+
+
 
 # save dataframe #
 write.dta(replication4, file = "replication4.dta")
