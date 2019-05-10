@@ -1,10 +1,31 @@
 ---
-title: "Diffusion of Laws Against Women Related Violence"
-author: "Byung-Deuk Woo"
-date: ""
+title: "An Example Article"
+author:
+- affiliation: University of Iowa
+  name: Frederick Solt
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document: default
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    keep_tex: no
+    latex_engine: pdflatex
+    template: svm-latex-ms2.tex
   word_document: default
+citecolor: black
+biblio-style: apsr
+endnote: no
+fontsize: 11pt
+keywords: these, always seem silly, to me, given google, but regardless
+linkcolor: black
+bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), "bib$"))`}
+spacing: single
+thanks: 'The paper''s revision history and the materials needed to reproduce its analyses
+  `r format(Sys.time(), ''%B %d, %Y'')`.'
+  can be found [on Github here](http://github.com/fsolt/example_article). Corresponding
+  author: [frederick-solt@uiowa.edu](mailto:frederick-solt@uiowa.edu). Current version:
+abstract: Here's where you write 100 to 250 words, depending on the journal, that
+  describe your objective, methods, results, and conclusion.
 ---
 
 ```{r setup, include=FALSE}
