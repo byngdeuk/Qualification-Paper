@@ -202,3 +202,7 @@ frifop197211,l_nomore2,ql_3,"c(2, 1)",Should abortion be permitted if married an
 gallup_canada1965,l_health2,q10b,"c(2, 1)",Should abortion be permitted if health is endangered by pregnancy,1 Yes / 2 No
 gallup_canada1970,l_any2,q9,"c(2, 1)",Should abortion be permitted if woman wants for any reason,1 Yes / 2 No
 gallup_canada1972,l_doctor2,q6a,"c(2, 1)",The right of a wman to have an abortion should be left entirely the women and her doctor, 1 Agree / 2 Disagree
+gallup_canada197409,l_doctor2,q07a,"c(2, 1)",The right of a wman to have an abortion should be left entirely the women and her doctor, 1 Agree / 2 Disagree
+gallup_canada197507,l_n_an_a3,q10a,c(3:1),"What do you think about abortion? Should it be legal as it is now, legal only in such cases as saving the life of the mother, rape or incest, or should it not be permitted at all?", "1 any / 2 certain / 3 none"
+gallup_canada197902,l_doctor2,q1a,"c(2, 1)",The right of a wman to have an abortion should be left entirely the women and her doctor, 1 Agree / 2 Disagree
+gallup_canada198307,l_n_an_a3,q13a,c(3:1),"What do you think about abortion? Should it be legal as it is now, legal only in such cases as saving the life of the mother, rape or incest, or should it not be permitted at all?", "1 any / 2 certain / 3 none"
