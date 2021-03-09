@@ -115,3 +115,36 @@ bsa1998,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law sho
 bsa1998,l_defect2,abort5,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: There is a strong change of a defect in the baby, 1 Yes / 2 No
 bsa1998,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman's health is seriously endangered by the pregnancy, 1 Yes / 2 No
 bsa1998,l_rape2,abort7,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman became pregnant as a result of rape, 1 Yes / 2 No
+bsa2000,a_defect4,aborwrga,c(1:4),Do you personally think it is wrong or not wrong for a woman to have an abortion: If there is a trong chance of serious defect in the baby?, 1 Always wrong / 2 Almost always wrong / 3 Wrong only sometimes / 4 Not wrong at all
+bsa2000,a_poor4,aborwrgb,c(1:4),Do you personally think it is wrong or not wrong for a woman to have an abortion: If the family has a very low income and cannot afford any more children?, 1 Always wrong / 2 Almost always wrong / 3 Wrong only sometimes / 4 Not wrong at all
+bsa2004,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
+bsa2004,l_couple2,abort2,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple agree they do not wish to have the child,1 Yes / 2 No
+bsa2004,l_single2,abort3,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman is not married and does not wish to marry the man,1 Yes / 2 No
+bsa2004,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple cannot afford any more children, 1 Yes / 2 No
+bsa2004,l_defect2,abort5,"c(2, 1)",,Please say whether or not you think the law should allow an abortion in each case: There is a strong change of a defect in the baby, 1 Yes / 2 No
+bsa2004,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman's health is seriously endangered by the pregnancy, 1 Yes / 2 No
+bsa2004,l_rape2,abort7,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman became pregnant as a result of rape, 1 Yes / 2 No
+bsa2005,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
+bsa2005,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple cannot afford any more children, 1 Yes / 2 No
+bsa2005,l_health2,abort6,"c(2, 1)",Should abortion be permitted if health is endangered by pregnancy,1 Yes / 2 No
+bsa2007,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
+bsa2007,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple cannot afford any more children, 1 Yes / 2 No
+bsa2007,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman's health is seriously endangered by the pregnancy, 1 Yes / 2 No
+bsa2008,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
+bsa2008,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple cannot afford any more children, 1 Yes / 2 No
+bsa2008,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman's health is seriously endangered by the pregnancy, 1 Yes / 2 No
+bsa2010,a_defect4,aborwrga,c(1:4),Do you personally think it is wrong or not wrong for a woman to have an abortion: If there is a trong chance of serious defect in the baby?, 1 Always wrong / 2 Almost always wrong / 3 Wrong only sometimes / 4 Not wrong at all
+bsa2010,a_poor4,aborwrgb,c(1:4),Do you personally think it is wrong or not wrong for a woman to have an abortion: If the family has a very low income and cannot afford any more children?, 1 Always wrong / 2 Almost always wrong / 3 Wrong only sometimes / 4 Not wrong at all
+bsa2012,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
+bsa2012,l_couple2,abort2,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple agree they do not wish to have the child,1 Yes / 2 No
+bsa2012,l_single2,abort3,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman is not married and does not wish to marry the man,1 Yes / 2 No
+bsa2012,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple cannot afford any more children, 1 Yes / 2 No
+bsa2012,l_defect2,abort5,"c(2, 1)",,Please say whether or not you think the law should allow an abortion in each case: There is a strong change of a defect in the baby, 1 Yes / 2 No
+bsa2012,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman's health is seriously endangered by the pregnancy, 1 Yes / 2 No
+bsa2012,l_rape2,abort7,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman became pregnant as a result of rape, 1 Yes / 2 No
+bsa2016,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
+bsa2016,l_poor2,abort4,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The couple cannot afford any more children, 1 Yes / 2 No
+bsa2016,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman's health is seriously endangered by the pregnancy, 1 Yes / 2 No
+cces2014,l_any2,cc14_323_1,"c(2, 1)",Should abortion be permitted if woman wants for any reason,1 Yes / 2 No
+cces2015,l_any2,cc15_322a,"c(2, 1)",Should abortion be permitted if woman wants for any reason,1 Yes / 2 No
+cces2016,l_any2,cc16_332a,"c(2, 1)",Should abortion be permitted if woman wants for any reason,1 Yes / 2 No
