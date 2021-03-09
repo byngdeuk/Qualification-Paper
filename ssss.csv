@@ -1,19 +1,2 @@
 survey,item,variable,values
 allbus,l_defect2,vm01,"c(2, 1)",Should abortion be permitted if strong chance of serious defect,1 Yes / 2 No
-allbus,l_nomore2,vm02,"c(2, 1)",Should abortion be permitted if married and doesn't want more children,1 Yes / 2 No
-allbus,l_health2,vm03,"c(2, 1)",Should abortion be permitted if health is endangered by pregnancy,1 Yes / 2 No
-allbus,l_poor2,vm04,"c(2, 1)",Should abortion be permitted if family is very low income and cannot afford more children,1 Yes / 2 No
-allbus,l_rape2,vm05,"c(2, 1)",Should abortion be permitted if rape victim,1 Yes / 2 No
-allbus,l_single2,vm06,"c(2, 1)",Should abortion be permitted if unmarried and does not want to marry man,1 Yes / 2 No
-allbus,l_any2,vm07,"c(2, 1)",Should abortion be permitted if woman wants for any reason,1 Yes / 2 No
-allbus,free7,pa08,c(1:7),Please tell me to what extent you agree with the following statements: Women should be allowed to decide for themsevles whether they want to have an abortion, 1 Completely disagree / 7 Agree completely
-abcwapo199507,l_ncca4,q51,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo199509,l_ncca4,q14,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo199510,l_ncca4,q30,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo199607,l_ncca4,q22,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo199608,l_ncca4,q44,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo199903,l_ncca4,q45,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo199908,l_ncca4,q42,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo200007,l_ncca4,q22,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo200009,l_ncca4,q18,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
-abcwapo200101,l_ncca4,q32,c(4:1),Do you think abortion should be, 1 Legal in all cases / 2 Legal in most cases / 3 Illegal in most cases / 4 Illegal in all cases
