@@ -117,4 +117,4 @@ bsa1998,l_health2,abort6,"c(2, 1)",Please say whether or not you think the law s
 bsa1998,l_rape2,abort7,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman became pregnant as a result of rape, 1 Yes / 2 No
 bsa2000,a_defect4,aborwrga,c(1:4),Do you personally think it is wrong or not wrong for a woman to have an abortion: If there is a trong chance of serious defect in the baby?, 1 Always wrong / 2 Almost always wrong / 3 Wrong only sometimes / 4 Not wrong at all
 bsa2000,a_poor4,aborwrgb,c(1:4),Do you personally think it is wrong or not wrong for a woman to have an abortion: If the family has a very low income and cannot afford any more children?, 1 Always wrong / 2 Almost always wrong / 3 Wrong only sometimes / 4 Not wrong at all
-bsa2004,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child",1 Yes / 2 No
+bsa2004,l_any2,abort1,"c(2, 1)",Please say whether or not you think the law should allow an abortion in each case: The woman decides on her own she does not wish to have a child,1 Yes / 2 No
